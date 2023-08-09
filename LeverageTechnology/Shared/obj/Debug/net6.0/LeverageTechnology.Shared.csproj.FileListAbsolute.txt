@@ -1,0 +1,12 @@
+C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Shared\bin\Debug\net6.0\LeverageTechnology.Shared.deps.json
+C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Shared\bin\Debug\net6.0\LeverageTechnology.Shared.dll
+C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Shared\bin\Debug\net6.0\LeverageTechnology.Shared.pdb
+C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Shared\obj\Debug\net6.0\LeverageTechnology.Shared.csproj.AssemblyReference.cache
+C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Shared\obj\Debug\net6.0\LeverageTechnology.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Shared\obj\Debug\net6.0\LeverageTechnology.Shared.AssemblyInfoInputs.cache
+C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Shared\obj\Debug\net6.0\LeverageTechnology.Shared.AssemblyInfo.cs
+C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Shared\obj\Debug\net6.0\LeverageTechnology.Shared.csproj.CoreCompileInputs.cache
+C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Shared\obj\Debug\net6.0\LeverageTechnology.Shared.dll
+C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Shared\obj\Debug\net6.0\refint\LeverageTechnology.Shared.dll
+C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Shared\obj\Debug\net6.0\LeverageTechnology.Shared.pdb
+C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Shared\obj\Debug\net6.0\ref\LeverageTechnology.Shared.dll
