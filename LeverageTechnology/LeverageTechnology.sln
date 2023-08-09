@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeverageTechnology.Server", "Server\LeverageTechnology.Server.csproj", "{70800373-1863-4A79-8F2D-575BA00996AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeverageTechnology.Server", "Server\LeverageTechnology.Server.csproj", "{70800373-1863-4A79-8F2D-575BA00996AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeverageTechnology.Client", "Client\LeverageTechnology.Client.csproj", "{1FFE4869-DBB9-4DF4-9D02-8E712843C8F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeverageTechnology.Client", "Client\LeverageTechnology.Client.csproj", "{1FFE4869-DBB9-4DF4-9D02-8E712843C8F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeverageTechnology.Shared", "Shared\LeverageTechnology.Shared.csproj", "{BAC7C04A-DED5-4454-8514-66453EDC5520}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeverageTechnology.Shared", "Shared\LeverageTechnology.Shared.csproj", "{BAC7C04A-DED5-4454-8514-66453EDC5520}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
