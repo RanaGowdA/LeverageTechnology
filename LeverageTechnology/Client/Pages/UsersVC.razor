@@ -1,0 +1,219 @@
+﻿ 
+@using System.Text.Json;
+@using System.Text; 
+@using LeverageTechnology.Client.Pages.StdVC;
+@using LeverageTechnology.Client.Utility;
+@using LeverageTechnology.Shared; 
+
+@inject ApiService ApiService
+
+<MudGrid Class="pa-2">
+    <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
+        <MudDataGrid Class="pt-3 pa-4" FixedHeader="true" T="AppUser" Items="@AppUsers" EditMode="DataGridEditMode.Form"
+                     Bordered="true" Dense="true" SelectedItemsChanged="@SelectedItemsChanged">
+
+            <ToolBarContent>
+                <MudText Typo="Typo.h5" Color="Color.Primary">Users</MudText>
+                <MudSpacer />
+                <MudSpacer />
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="CreateNewAppUser" />
+            </ToolBarContent>
+
+            <Columns>
+                <SelectColumn T="AppUser" />
+                <PropertyColumn Property="x => x.FirstName" Title="FirstName" />
+                <PropertyColumn Property="x => x.LastName" Title="LastName" />
+                <PropertyColumn Property="x => x.UserName" Title="UserName" />
+                <PropertyColumn Property="x => x.PasswordHash" Title="Password" /> 
+                <TemplateColumn CellClass="d-flex justify-end">
+                    <CellTemplate>
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Info" OnClick="InfoItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="StartedEditingItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete" OnClick="DeleteItem" />
+                    </CellTemplate>
+                </TemplateColumn>
+            </Columns>
+            <PagerContent>
+                <MudDataGridPager T="AppUser" RowsPerPageString="10" />
+            </PagerContent>
+        </MudDataGrid>
+    </MudItem>
+</MudGrid>
+
+@code {
+
+
+
+    #region Variables
+     
+    public List<AppUser> AppUsers { get; set; }
+    public List<AppRole> AppRoles { get; set; }
+    public AppUser SelectedAppUser { get; set; }
+    public RegisterDto NewUser { get; set; }
+
+    #endregion Variables
+
+    protected override async Task OnInitializedAsync()
+    {
+        AppUsers = await ApiService.GetUsers(); 
+        AppRoles = await ApiService.GetRoles();
+
+    }
+
+
+    #region Events
+
+    void SelectedItemsChanged(HashSet<AppUser> items)
+    {
+        var selectedItem = items.FirstOrDefault();
+        if (selectedItem != null)
+        {
+            SelectedAppUser = selectedItem;
+        }
+    }
+
+    async void StartedEditingItem()
+    {
+
+        var parameters = new DialogParameters();
+        parameters.Add("IsUsers", true);
+        parameters.Add("NewUser", SelectedAppUser);
+        parameters.Add("Roles", AppRoles);
+        var dialog = await Dialog.ShowAsync<AdminDialog>("Edit User", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
+
+        if (!result.Canceled)
+        {
+            //// create request object
+            //var request = new HttpRequestMessage(HttpMethod.Post, "api/UserAdmin/EU");
+
+            //// set request body
+            //request.Content = new StringContent(JsonSerializer.Serialize(SelectedAppUser), Encoding.UTF8, "application/json");
+
+            ////// add authorization header
+            ////request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
+
+            //// send request
+            //var response = await httpClient.SendAsync(request);
+
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    ShowColorAlerts("AppUser Added", Severity.Success);
+            //    AppUsers = (await CS.SyncAppUsersTable()).ToList();
+            //    StateHasChanged();
+            //}
+            //else
+            //{
+            //    ShowColorAlerts("Fail To Add", Severity.Error);
+            //}
+        }
+        else
+        {
+            ShowColorAlerts("AppUser Not Added", Severity.Info);
+        }
+    }
+
+    async void InfoItem()
+    {
+        var parameters = new DialogParameters();
+        parameters.Add("IsUsers", true);
+        parameters.Add("IsInfo", true);
+        parameters.Add("NewUser", SelectedAppUser);
+        parameters.Add("Roles", AppRoles);
+        var dialog = await Dialog.ShowAsync<AdminDialog>("AppRole", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
+
+    }
+
+    async void DeleteItem()
+    {
+
+        //DataIdDTO dataIdDTO = new();
+        //dataIdDTO.Id = SelectedAppUser.Id;
+
+        //// create request object
+        //var request = new HttpRequestMessage(HttpMethod.Post, "api/UserAdmin/DU");
+
+        //// set request body
+        //request.Content = new StringContent(JsonSerializer.Serialize(dataIdDTO), Encoding.UTF8, "application/json");
+
+        ////// add authorization header
+        ////request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
+
+        //// send request
+        //var response = await httpClient.SendAsync(request);
+
+        //if (response.IsSuccessStatusCode)
+        //{
+        //    AppUsers = (await CS.SyncAppUsersTable()).ToList();
+        //    ShowColorAlerts("AppRole Deleted", Severity.Success);
+        //    StateHasChanged();
+        //}
+        //else
+        //{
+        //    ShowColorAlerts("Fail To Delete", Severity.Error);
+        //}
+    }
+
+    async void CreateNewAppUser()
+    {
+        //NewUser = new UserLoginDto(); 
+        //var parameters = new DialogParameters();
+        //parameters.Add("IsUsers", true);
+        //parameters.Add("NewUser", NewUser);
+        //parameters.Add("Roles", AppRoles);
+        //var dialog = await Dialog.ShowAsync<AdminDialog>("Add User", parameters, DialogSettings.DialogOptionsAddEditLead);
+        //var result = await dialog.Result;
+
+        //if (!result.Canceled)
+        //{
+        //    // create request object
+        //    var request = new HttpRequestMessage(HttpMethod.Post, "api/UserAdmin/AU");
+
+        //    // set request body
+        //    request.Content = new StringContent(JsonSerializer.Serialize(NewUser), Encoding.UTF8, "application/json");
+
+        //    //// add authorization header
+        //    //request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
+
+        //    // send request
+        //    var response = await httpClient.SendAsync(request);
+
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        AppUsers = (await CS.SyncAppUsersTable()).ToList();
+        //        ShowColorAlerts("AppUser Added", Severity.Success);
+        //        StateHasChanged();
+
+        //    }
+        //    else
+        //    {
+        //        ShowColorAlerts("Fail To Add", Severity.Error);
+        //    }
+        //}
+        //else
+        //{
+        //    ShowColorAlerts("AppUser Not Added", Severity.Info);
+        //}
+
+    }
+
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="TextToDisplay"></param>
+    /// <param name="AlertSeverity"></param>
+    private void ShowColorAlerts(string TextToDisplay, Severity AlertSeverity)
+    {
+        SnackbarService.Clear();
+        SnackbarService.Configuration.PositionClass = Defaults.Classes.Position.BottomCenter;
+        SnackbarService.Add(TextToDisplay, AlertSeverity);
+    }
+
+
+    #endregion Events
+
+
+
+
+}

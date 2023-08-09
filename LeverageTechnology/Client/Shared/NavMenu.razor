@@ -9,14 +9,16 @@
         @foreach (var CaseStudy in caseStudies)
         {
             var link = "/Landing/" + CaseStudy;
-            <MudNavLink Icon="@Icons.Material.Filled.AccountBalance" Href="@link">@CaseStudy</MudNavLink>
+            <MudNavLink Icon="@Icons.Material.Filled.Segment" IconColor="Color.Primary" Href="@link">@CaseStudy</MudNavLink>
         }
     }
 
     <AuthorizeView Roles="Admin, User">
         <MudNavGroup Icon="@Icons.Material.Filled.Settings" Title="Configurations" Expanded="true">
-            <MudNavLink Icon="@Icons.Material.Filled.AccountBalance" Href="/PACVC">Account Configuration</MudNavLink>
             <MudNavLink Icon="@Icons.Material.Filled.AdminPanelSettings" Href="/UA">User Management</MudNavLink>
+            <MudNavLink Icon="@Icons.Material.Filled.Cases" Href="/CS">CaseStudies</MudNavLink>
+            <MudNavLink Icon="@Icons.Material.Filled.TableChart" Href="/ET">ExpTables</MudNavLink>
+            <MudNavLink Icon="@Icons.Material.Filled.ViewHeadline" Href="/IN">Intros</MudNavLink>
         </MudNavGroup>
     </AuthorizeView>
 

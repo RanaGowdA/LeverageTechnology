@@ -12,5 +12,6 @@ namespace LeverageTechnology.Shared
         public string Page { get; set; }
         public string Introduction { get; set; }
         public string keywords { get; set; }
+        public string Video { get; set; }
     }
 }

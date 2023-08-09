@@ -1,0 +1,14 @@
+﻿@page "/UA"
+
+<MudTabs Elevation="4" Rounded="true" AlwaysShowScrollButtons="true" Style="@($"color:{Colors.Indigo.Darken4}")" Class="mt-4 mr-5 ml-5">
+    <MudTabPanel Text="Users" Icon="@Icons.Material.Filled.VerifiedUser">
+        <UsersVC> </UsersVC>
+    </MudTabPanel>
+    <MudTabPanel Text="Roles" Icon="@Icons.Material.Filled.DesignServices">
+        <RolesVC></RolesVC>
+    </MudTabPanel>
+</MudTabs>
+
+@code {
+
+}

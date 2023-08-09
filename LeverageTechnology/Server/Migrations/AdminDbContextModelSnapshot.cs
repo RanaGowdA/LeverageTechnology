@@ -138,6 +138,10 @@ namespace LeverageTechnology.Server.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Video")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("keywords")
                         .IsRequired()
                         .HasColumnType("TEXT");

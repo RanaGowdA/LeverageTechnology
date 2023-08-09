@@ -1,7 +1,7 @@
 ﻿using LeverageTechnology.Server.Data;
-using LeverageTechnology.Shared; 
+using LeverageTechnology.Shared;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory; 
+using Microsoft.Extensions.Caching.Memory;
 
 namespace LeverageTechnology.Server.Data
 {
@@ -12,8 +12,18 @@ namespace LeverageTechnology.Server.Data
 
         public ApiDbContext(AdminDbContext context, IMemoryCache cache)
         {
-            _context=context;
+            _context = context;
             _cache = cache;
+        }
+
+        public async Task<List<AppRole>> GetAllRoles()
+        {
+            return await _context.AppRole.ToListAsync();
+        }
+
+        public async Task<List<AppUser>> GetAllUsers()
+        {
+            return await _context.AppUser.ToListAsync();
         }
 
         public async Task<AppUser> GetAppUserByUsername(string username)

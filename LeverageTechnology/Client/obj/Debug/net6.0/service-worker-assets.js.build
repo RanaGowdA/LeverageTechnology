@@ -5,7 +5,7 @@
       "url": "css\/app.css"
     },
     {
-      "hash": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=",
+      "hash": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7\/p4nS6D\/0=",
       "url": "css\/bootstrap\/bootstrap.min.css"
     },
     {
@@ -61,7 +61,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-vjfPrzdd1zsQLfX9S04hXj15tBNAQ0TKQM5b1JMikn0=",
+      "hash": "sha256-rkICWhLQM6BxYQlFm0W4MXGIyWI6F1xODojekWxf53E=",
       "url": "index.html"
     },
     {
@@ -874,7 +874,7 @@
     },
     {
       "hash": "sha256-Iww31ANFa3KZuR4RkhiSYt3FJ7PKpMdeFNq3l3Td1h8=",
-      "url": "_framework\/dotnet.6.0.18.fsgwq42hzu.js"
+      "url": "_framework\/dotnet.6.0.18.cj7xi80tko.js"
     },
     {
       "hash": "sha256-eZ48TqSDBkRFut2vm6DOJQJPQjvG+LB8ucOA4NLkqg0=",
@@ -901,19 +901,19 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-HQXLJJyLIWFL9GXca3HBmfgjrdp0lFhWgrelzh+YkPY=",
+      "hash": "sha256-puKeBPWAgSFI0SqyMilLgJbSl30ziSZau3DQbhtw8no=",
       "url": "_framework\/LeverageTechnology.Shared.dll"
     },
     {
-      "hash": "sha256-TRuyPUWUP5M19BuUXogwWw2YLBwv78alvHp6RLfrOGM=",
+      "hash": "sha256-Msk869J504+OGPbg74fkjj31kpPLM5s+IEM5XV6WEtw=",
       "url": "_framework\/LeverageTechnology.Shared.pdb"
     },
     {
-      "hash": "sha256-COu64dhrJ5jwzT15dcfSNSfdbuLQPSCJxfoMqJ1CpYg=",
+      "hash": "sha256-pMOckdMIL3Jkg9KF0FMO9utD+LQyvwZBqcUndannxxE=",
       "url": "_framework\/LeverageTechnology.Client.dll"
     },
     {
-      "hash": "sha256-8G7pSlwVMFWf0SZqBPdzIB1QnF\/CGRNeQon71U7IKxM=",
+      "hash": "sha256-T9Wf27qLAAxAOQ\/FVSAZqoYYmguZ5iqfM0G5cSjivmU=",
       "url": "_framework\/LeverageTechnology.Client.pdb"
     },
     {
@@ -921,7 +921,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-FSzddhLRfhKOkAjNSS4\/P7ujrg0EEjoMGFqhjo2CeGo=",
+      "hash": "sha256-ODbZ4UcP8V2n0NKVn3rkEu\/O2QSYQzFTK4Uo2Fs9WHI=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -937,5 +937,5 @@
       "url": "_content\/MudBlazor.ThemeManager\/MudBlazorThemeManager.css"
     }
   ],
-  "version": "ojDb\/B0F"
+  "version": "YYuDpnSJ"
 };

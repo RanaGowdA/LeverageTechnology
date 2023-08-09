@@ -1,0 +1,212 @@
+﻿ 
+@using System.Text.Json;
+@using System.Text; 
+@using LeverageTechnology.Client.Pages.StdVC;
+@using LeverageTechnology.Client.Utility;
+@using LeverageTechnology.Shared;
+
+
+@inject ApiService ApiService
+<MudGrid Class="pa-2">
+    <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
+        <MudDataGrid Class="pt-3 pa-4" FixedHeader="true" T="AppRole" Items="@AppRoles" EditMode="DataGridEditMode.Form"
+                     Bordered="true" Dense="true" SelectedItemsChanged="@SelectedItemsChanged">
+
+            <ToolBarContent>
+                <MudText Typo="Typo.h5" Color="Color.Primary">Roles</MudText>
+                <MudSpacer />
+                <MudSpacer />
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="CreateNewAppRole" />
+            </ToolBarContent>
+
+            <Columns>
+                <SelectColumn T="AppRole" />
+                <PropertyColumn Property="x => x.Id" Title="Id" IsEditable="false" />
+                <PropertyColumn Property="x => x.Name" Title="Role" />
+                <TemplateColumn CellClass="d-flex justify-end">
+                    <CellTemplate>
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Info" OnClick="InfoItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="StartedEditingItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete" OnClick="DeleteItem" />
+                    </CellTemplate>
+                </TemplateColumn>
+            </Columns>
+            <PagerContent>
+                <MudDataGridPager T="AppRole" RowsPerPageString="10" />
+            </PagerContent>
+        </MudDataGrid>
+    </MudItem>
+</MudGrid>
+
+@code {
+
+
+
+    #region Variables
+
+    public List<AppRole> AppRoles { get; set; }
+    public AppRole SelectedAppRole { get; set; }
+    public AppRole NewAppRole { get; set; }
+
+    #endregion Variables
+
+    protected override async Task OnInitializedAsync()
+    {
+        AppRoles = (await ApiService.GetRoles()).ToList();
+    }
+
+
+    #region Events
+
+    void SelectedItemsChanged(HashSet<AppRole> items)
+    {
+        var selectedItem = items.FirstOrDefault();
+        if (selectedItem != null)
+        {
+            SelectedAppRole = selectedItem;
+        }
+    }
+
+    async void StartedEditingItem()
+    {
+
+        //var parameters = new DialogParameters();
+        //parameters.Add("IsRoles", true);
+        //parameters.Add("NewRole", SelectedAppRole);
+        //var dialog = await Dialog.ShowAsync<AdminDialog>("Edit Role", parameters, DialogSettings.DialogOptionsAddEditLead);
+        //var result = await dialog.Result;
+
+        //if (!result.Canceled)
+        //{
+        //    // create request object
+        //    var request = new HttpRequestMessage(HttpMethod.Post, "api/RoleManager/ER");
+
+        //    // set request body
+        //    request.Content = new StringContent(JsonSerializer.Serialize(SelectedAppRole), Encoding.UTF8, "application/json");
+
+        //    //// add authorization header
+        //    //request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
+
+        //    // send request
+        //    var response = await httpClient.SendAsync(request);
+
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        ShowColorAlerts("AppRole Added", Severity.Success);
+        //        AppRoles = (await CS.SyncAppRolesTable()).ToList();
+        //        StateHasChanged();
+        //    }
+        //    else
+        //    {
+        //        ShowColorAlerts("Fail To Add", Severity.Error);
+        //    }
+        //}
+        //else
+        //{
+        //    ShowColorAlerts("AppRole Not Added", Severity.Info);
+        //}
+    }
+
+    async void InfoItem()
+    {
+        var parameters = new DialogParameters();
+        parameters.Add("IsRoles", true);
+        parameters.Add("IsInfo", true);
+        parameters.Add("NewRole", SelectedAppRole);
+        var dialog = await Dialog.ShowAsync<AdminDialog>("AppRole", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
+
+    }
+
+    async void DeleteItem()
+    {
+
+        //DataIdDTO dataIdDTO = new();
+        //dataIdDTO.Id = SelectedAppRole.Id;
+
+        //// create request object
+        //var request = new HttpRequestMessage(HttpMethod.Post, "api/RoleManager/DR");
+
+        //// set request body
+        //request.Content = new StringContent(JsonSerializer.Serialize(dataIdDTO), Encoding.UTF8, "application/json");
+
+        ////// add authorization header
+        ////request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
+
+        //// send request
+        //var response = await httpClient.SendAsync(request);
+
+        //if (response.IsSuccessStatusCode)
+        //{
+        //    AppRoles = (await CS.SyncAppRolesTable()).ToList();
+        //    ShowColorAlerts("AppRole Deleted", Severity.Success);
+        //    StateHasChanged();
+
+        //}
+        //else
+        //{
+        //    ShowColorAlerts("Fail To Delete", Severity.Error);
+        //}
+    }
+
+    async void CreateNewAppRole()
+    {
+        //var parameters = new DialogParameters();
+        //parameters.Add("IsRoles", true);
+        //parameters.Add("NewRole", NewAppRole);
+        //var dialog = await Dialog.ShowAsync<AdminDialog>("AppRole", parameters, DialogSettings.DialogOptionsAddEditLead);
+        //var result = await dialog.Result;
+
+        //if (!result.Canceled)
+        //{
+        //    // create request object
+        //    var request = new HttpRequestMessage(HttpMethod.Post, "api/RoleManager/AR");
+
+        //    // set request body
+        //    request.Content = new StringContent(JsonSerializer.Serialize(NewAppRole), Encoding.UTF8, "application/json");
+
+        //    //// add authorization header
+        //    //request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
+
+        //    // send request
+        //    var response = await httpClient.SendAsync(request);
+
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        AppRoles = (await CS.SyncAppRolesTable()).ToList();
+        //        ShowColorAlerts("AppRole Added", Severity.Success);
+        //        StateHasChanged();
+
+        //    }
+        //    else
+        //    {
+        //        ShowColorAlerts("Fail To Add", Severity.Error);
+        //    }
+        //}
+        //else
+        //{
+        //    ShowColorAlerts("AppRole Not Added", Severity.Info);
+        //}
+
+    }
+
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="TextToDisplay"></param>
+    /// <param name="AlertSeverity"></param>
+    private void ShowColorAlerts(string TextToDisplay, Severity AlertSeverity)
+    {
+        SnackbarService.Clear();
+        SnackbarService.Configuration.PositionClass = Defaults.Classes.Position.BottomCenter;
+        SnackbarService.Add(TextToDisplay, AlertSeverity);
+    }
+
+
+
+    #endregion Events
+
+
+
+
+}

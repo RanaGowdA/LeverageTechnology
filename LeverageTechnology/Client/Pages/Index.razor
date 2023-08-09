@@ -1,9 +1,39 @@
 ﻿@page "/dashboard"
 
-<PageTitle>Index</PageTitle>
+@inject ApiService ApiService
 
-<h1>Hello, world!</h1>
+<MudTabs Outlined="true" Position="Position.Top" Rounded="true" Border="true"
+         ApplyEffectsToContainer="true" Class="mt-4 mr-5 ml-5" PanelClass="pa-6" Style="height:100%">
 
-Welcome to your new app.
+    <MudTabPanel Text="@title">
+        <MudCard Class="mt-1 mr-5 ml-5">
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h5">@introduction</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <div style="padding:56.25% 0 0 0;position:relative;">
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+                <iframe src="@videosrc;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                        title="@title">
+                </iframe>
+            </div>
+        </MudCard>
+    </MudTabPanel>
+</MudTabs>
+
+@code {
+    public string videosrc = "";
+    public string introduction = "";
+    public string title = "";
+
+    protected async override Task OnInitializedAsync()
+    {
+        videosrc = "https://player.vimeo.com/video/" + ApiService.ExpTables[0].Video + '?';
+        introduction = ApiService.ExpTables[0].Introduction;
+        title = ApiService.ExpTables[0].Page;
+
+
+    }
+}

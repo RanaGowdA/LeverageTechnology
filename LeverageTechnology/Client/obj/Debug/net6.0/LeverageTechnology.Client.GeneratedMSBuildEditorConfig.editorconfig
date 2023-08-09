@@ -20,6 +20,18 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[R:/Web Development/RanaAdigowni/ProjectX/LeverageTechnology/LeverageTechnology/Client/Pages/AdminVc/CaseStudyVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5WY1xDYXNlU3R1ZHlWQy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/Web Development/RanaAdigowni/ProjectX/LeverageTechnology/LeverageTechnology/Client/Pages/AdminVc/ExpTableVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5WY1xFeHBUYWJsZVZDLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/Web Development/RanaAdigowni/ProjectX/LeverageTechnology/LeverageTechnology/Client/Pages/AdminVc/IntrosVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5WY1xJbnRyb3NWQy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [R:/Web Development/RanaAdigowni/ProjectX/LeverageTechnology/LeverageTechnology/Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +46,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [R:/Web Development/RanaAdigowni/ProjectX/LeverageTechnology/LeverageTechnology/Client/Pages/LoginVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5WQy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/Web Development/RanaAdigowni/ProjectX/LeverageTechnology/LeverageTechnology/Client/Pages/RolesVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9sZXNWQy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/Web Development/RanaAdigowni/ProjectX/LeverageTechnology/LeverageTechnology/Client/Pages/StdVC/AdminDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RkVkNcQWRtaW5EaWFsb2cucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/Web Development/RanaAdigowni/ProjectX/LeverageTechnology/LeverageTechnology/Client/Pages/UserAdminVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckFkbWluVkMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/Web Development/RanaAdigowni/ProjectX/LeverageTechnology/LeverageTechnology/Client/Pages/UsersVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNWQy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [R:/Web Development/RanaAdigowni/ProjectX/LeverageTechnology/LeverageTechnology/Client/Pages/VideoVC.razor]

@@ -15,7 +15,7 @@ namespace LeverageTechnology.Client
 
         public ApiService(IHttpService httpService)
         {
-            _httpService = httpService; 
+            _httpService = httpService;
         }
 
         public async Task<LoginResultDto> LoginUser(LoginDto dto)
@@ -24,7 +24,7 @@ namespace LeverageTechnology.Client
                 "/api/identity/login", dto);
 
             if (!httpResponse.Success)
-                throw new ApplicationException(await httpResponse.GetBody()); 
+                throw new ApplicationException(await httpResponse.GetBody());
             return httpResponse.Response;
         }
 
@@ -58,6 +58,27 @@ namespace LeverageTechnology.Client
                 throw new ApplicationException(await httpResponse.GetBody());
 
             ExpTables = httpResponse.Response;
+            return httpResponse.Response;
+        }
+
+        public async Task<List<AppUser>> GetUsers()
+        {
+            var httpResponse = await _httpService.GetHttpResponseWrapper<List<AppUser>>("/api/identity/GUS");
+
+            if (!httpResponse.Success)
+                throw new ApplicationException(await httpResponse.GetBody());
+
+            return httpResponse.Response;
+        }
+
+
+        public async Task<List<AppRole>> GetRoles()
+        {
+            var httpResponse = await _httpService.GetHttpResponseWrapper<List<AppRole>>("/api/identity/GRS");
+
+            if (!httpResponse.Success)
+                throw new ApplicationException(await httpResponse.GetBody());
+
             return httpResponse.Response;
         }
     }

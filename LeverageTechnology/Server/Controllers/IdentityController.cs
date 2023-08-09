@@ -266,6 +266,18 @@ namespace LeverageTechnology.Server.Controllers
                 Token = token,
             };
         }
+
+        [HttpPost("GUS")]
+        public async Task<List<AppUser>> GetUsers(string username)
+        {
+            return await _context.GetAllUsers();
+        }
+
+        [HttpPost("GRS")]
+        public async Task<List<AppRole>> GetRoles(string username)
+        {
+            return await _context.GetAllRoles();
+        }
     }
 }
 
