@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TYP+DSJeGTQWXCB3+EzgjkiGeUcqSFcFhTtj1T8JmIM=",
+  "Hash": "AzrUTY+areRZYW6qoJZo3QHj2YyJl11e4LxsfrjcyCs=",
   "Source": "LeverageTechnology.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\ng937c8\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.16\\build\\net6.0\\blazor.webassembly.js"
+    },
+    {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ng937c8\\.nuget\\packages\\blazored.localstorage\\4.3.0\\lib\\net6.0\\Blazored.LocalStorage.dll"
     },
     {
       "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\dotnet.6.0.18.fsgwq42hzu.js",
@@ -391,6 +408,40 @@
       "OriginalItemSpec": "C:\\Users\\ng937c8\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.16\\lib\\net6.0\\Microsoft.AspNetCore.Components.WebAssembly.dll"
     },
     {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Cryptography.Internal.dll",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Cryptography.Internal.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ng937c8\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.21\\lib\\net6.0\\Microsoft.AspNetCore.Cryptography.Internal.dll"
+    },
+    {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ng937c8\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.21\\lib\\net6.0\\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll"
+    },
+    {
       "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll",
       "SourceId": "LeverageTechnology.Client",
       "SourceType": "Computed",
@@ -423,6 +474,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ng937c8\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.18\\runtimes\\browser-wasm\\lib\\net6.0\\Microsoft.CSharp.dll"
+    },
+    {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Caching.Abstractions.dll",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Caching.Abstractions.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ng937c8\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\lib\\netstandard2.0\\Microsoft.Extensions.Caching.Abstractions.dll"
     },
     {
       "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Configuration.Abstractions.dll",
@@ -593,6 +661,40 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ng937c8\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\6.0.0\\lib\\net6.0\\Microsoft.Extensions.FileSystemGlobbing.dll"
+    },
+    {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Identity.Core.dll",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Identity.Core.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ng937c8\\.nuget\\packages\\microsoft.extensions.identity.core\\6.0.21\\lib\\net6.0\\Microsoft.Extensions.Identity.Core.dll"
+    },
+    {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Identity.Stores.dll",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Identity.Stores.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ng937c8\\.nuget\\packages\\microsoft.extensions.identity.stores\\6.0.21\\lib\\net6.0\\Microsoft.Extensions.Identity.Stores.dll"
     },
     {
       "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.Abstractions.dll",
@@ -3604,6 +3706,23 @@
       "OriginalItemSpec": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Text.Encoding.Extensions.dll"
     },
     {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\build-gz\\+9aUjbQB.gz",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll"
+    },
+    {
       "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\build-gz\\+f+6oWxC.gz",
       "SourceId": "LeverageTechnology.Client",
       "SourceType": "Computed",
@@ -4437,6 +4556,23 @@
       "OriginalItemSpec": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Web.HttpUtility.dll"
     },
     {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\build-gz\\aXPY2n6m.gz",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Identity.Stores.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Identity.Stores.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Identity.Stores.dll"
+    },
+    {
       "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\build-gz\\Bbc5aQiT.gz",
       "SourceId": "LeverageTechnology.Client",
       "SourceType": "Computed",
@@ -4809,6 +4945,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
+    },
+    {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\build-gz\\Ff8ZtmFm.gz",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Caching.Abstractions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Caching.Abstractions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Caching.Abstractions.dll"
     },
     {
       "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\build-gz\\FhfvQSfS.gz",
@@ -5644,6 +5797,23 @@
       "OriginalItemSpec": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Reflection.Metadata.dll"
     },
     {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\build-gz\\ndJXwB0P.gz",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Identity.Core.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Identity.Core.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Identity.Core.dll"
+    },
+    {
       "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\build-gz\\nEOvfcSX.gz",
       "SourceId": "LeverageTechnology.Client",
       "SourceType": "Computed",
@@ -5676,6 +5846,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Runtime.Numerics.dll"
+    },
+    {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\build-gz\\niFBJ95E.gz",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll"
     },
     {
       "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\build-gz\\NSSwo0rU.gz",
@@ -6458,6 +6645,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\LeverageTechnology.Shared.pdb"
+    },
+    {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\build-gz\\unQU5v6x.gz",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Cryptography.Internal.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Cryptography.Internal.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Cryptography.Internal.dll"
     },
     {
       "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\build-gz\\UOKuC52+.gz",
