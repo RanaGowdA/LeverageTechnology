@@ -3,7 +3,7 @@ using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text.Json;
 using Blazored.LocalStorage;
-using LeverageTechnology.Shared;
+using LeverageTechnology.Shared; 
 
 namespace LeverageTechnology.Client
 {
@@ -95,7 +95,7 @@ namespace LeverageTechnology.Client
             }
             catch { }
 
-            var authState = BuildAuthenticationState(dto.Token);
+            var authState = BuildAuthenticationState(dto.Token); 
             NotifyAuthenticationStateChanged(Task.FromResult(authState));
         }
 
@@ -104,7 +104,7 @@ namespace LeverageTechnology.Client
             await _localStorage.RemoveItemAsync(TOKEN_KEY);
             await _localStorage.RemoveItemAsync(USER_FULL_NAME_KEY);
 
-            NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()))));
+            NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity())))); 
         }
     }
 }

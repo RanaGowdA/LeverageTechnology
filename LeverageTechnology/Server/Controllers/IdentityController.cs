@@ -35,90 +35,92 @@ namespace LeverageTechnology.Server.Controllers
 
 
 
-        //[HttpGet("seed")]
-        //public async Task<LoginResultDto> Seed()
-        //{
-        //    var dto = new RegisterDto()
-        //    {
-        //        FirstName = "Rana",
-        //        LastName = "Gowd",
-        //        Password = "Password@123",
-        //        UserName = "rana",
-        //    };
+        [HttpGet("seed")]
+        public async Task<LoginResultDto> Seed()
+        {
+            var dto = new RegisterDto()
+            {
+                FirstName = "Rana",
+                LastName = "Gowd",
+                Password = "Password@123",
+                UserName = "rana",
+                IsAdmin = true
+            };
 
-        //    //var appRole = new AppRole() { Name = RoleConstants.SuperAdminRole };
-        //    //var result1 = await _roleManager.CreateAsync(appRole);
-        //    //var appRole2 = new AppRole() { Name = RoleConstants.AdminRole };
-        //    //var result2 = await _roleManager.CreateAsync(appRole2);
-        //    //var appRole3 = new AppRole() { Name = RoleConstants.UserRole };
-        //    //var result3 = await _roleManager.CreateAsync(appRole3);
+            //var appRole = new AppRole() { Name = RoleConstants.SuperAdminRole };
+            //var result1 = await _roleManager.CreateAsync(appRole);
+            //var appRole2 = new AppRole() { Name = RoleConstants.AdminRole };
+            //var result2 = await _roleManager.CreateAsync(appRole2);
+            //var appRole3 = new AppRole() { Name = RoleConstants.UserRole };
+            //var result3 = await _roleManager.CreateAsync(appRole3);
 
-        //    var appUser = new AppUser()
-        //    {
-        //        UserName = dto.UserName,
-        //        FirstName = dto.FirstName,
-        //        LastName = dto.LastName,
-        //        PhoneNumber = dto.UserName
-        //    };
+            var appUser = new AppUser()
+            {
+                UserName = dto.UserName,
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                PhoneNumber = dto.UserName, 
+                IsAdmin = true
+            };
 
-        //    var result = await _userManager.CreateAsync(appUser);
-        //    if (result.Succeeded)
-        //    {
-        //        var passResult = await _userManager.AddPasswordAsync(appUser, dto.Password);
-        //        if (passResult.Succeeded)
-        //        {
-        //            var appUserFromDb = await _context.GetAppUserByUsername(dto.UserName);
+            var result = await _userManager.CreateAsync(appUser);
+            if (result.Succeeded)
+            {
+                var passResult = await _userManager.AddPasswordAsync(appUser, dto.Password);
+                if (passResult.Succeeded)
+                {
+                    var appUserFromDb = await _context.GetAppUserByUsername(dto.UserName);
 
-        //            var roleResult = await _userManager.AddToRoleAsync(appUserFromDb, RoleConstants.UserRole);
+                    var roleResult = await _userManager.AddToRoleAsync(appUserFromDb, RoleConstants.UserRole);
 
-        //            if (roleResult.Succeeded)
-        //            {
-        //                var token = JwtHelper.GenerateJwtToken(
-        //                    appUserFromDb.UserName,
-        //                    new List<string> { RoleConstants.UserRole },
-        //                    _configuration["Jwt:Key"],
-        //                    _configuration["Jwt:Issuer"],
-        //                    validDays: 90);
+                    if (roleResult.Succeeded)
+                    {
+                        var token = JwtHelper.GenerateJwtToken(
+                            appUserFromDb.UserName,
+                            new List<string> { RoleConstants.UserRole },
+                            _configuration["Jwt:Key"],
+                            _configuration["Jwt:Issuer"],
+                            validDays: 90);
 
-        //                return new LoginResultDto
-        //                {
-        //                    Id = appUserFromDb.Id,
-        //                    Succeeded = true,
-        //                    Name = $"{appUserFromDb.FirstName} {appUserFromDb.LastName}",
-        //                    Token = token
-        //                };
-        //            }
-        //            else
-        //            {
-        //                var appUserFromDbWithoutRole = await _context.GetAppUserByUsername(dto.UserName);
-        //                await _userManager.DeleteAsync(appUserFromDbWithoutRole);
+                        return new LoginResultDto
+                        {
+                            Id = appUserFromDb.Id,
+                            Succeeded = true,
+                            Name = $"{appUserFromDb.FirstName} {appUserFromDb.LastName}",
+                            Token = token
+                        };
+                    }
+                    else
+                    {
+                        var appUserFromDbWithoutRole = await _context.GetAppUserByUsername(dto.UserName);
+                        await _userManager.DeleteAsync(appUserFromDbWithoutRole);
 
-        //                return new LoginResultDto
-        //                {
-        //                    Succeeded = false,
-        //                    Error = "Role could'nt be assigned"
-        //                };
-        //            }
-        //        }
-        //        else
-        //        {
-        //            var appUserFromDB = await _context.GetAppUserByUsername(dto.UserName);
-        //            await _userManager.DeleteAsync(appUserFromDB);
+                        return new LoginResultDto
+                        {
+                            Succeeded = false,
+                            Error = "Role could'nt be assigned"
+                        };
+                    }
+                }
+                else
+                {
+                    var appUserFromDB = await _context.GetAppUserByUsername(dto.UserName);
+                    await _userManager.DeleteAsync(appUserFromDB);
 
-        //            return new LoginResultDto
-        //            {
-        //                Succeeded = false,
-        //                Error = "Password Error"
-        //            };
-        //        }
-        //    }
+                    return new LoginResultDto
+                    {
+                        Succeeded = false,
+                        Error = "Password Error"
+                    };
+                }
+            }
 
-        //    return new LoginResultDto
-        //    {
-        //        Succeeded = false,
-        //        Error = $"Error! {string.Join(", ", result.Errors.Select(e => e.Description))}"
-        //    };
-        //}
+            return new LoginResultDto
+            {
+                Succeeded = false,
+                Error = $"Error! {string.Join(", ", result.Errors.Select(e => e.Description))}"
+            };
+        }
 
         [HttpPost("createrole")]
         public async Task<bool> CreateRole(RoleCreateDto dto)
@@ -146,8 +148,8 @@ namespace LeverageTechnology.Server.Controllers
             {
                 UserName = dto.UserName,
                 FirstName = dto.FirstName,
-                LastName = dto.LastName,
-                PhoneNumber = dto.UserName
+                LastName = dto.LastName, 
+                IsAdmin = dto.IsAdmin
             };
 
             var result = await _userManager.CreateAsync(appUser);
@@ -158,7 +160,9 @@ namespace LeverageTechnology.Server.Controllers
                 {
                     var appUserFromDb = await _context.GetAppUserByUsername(dto.UserName);
 
-                    var roleResult = await _userManager.AddToRoleAsync(appUserFromDb, RoleConstants.UserRole);
+                    var role = dto.IsAdmin ? RoleConstants.AdminRole : RoleConstants.UserRole;
+
+                    var roleResult = await _userManager.AddToRoleAsync(appUserFromDb, role);
 
                     if (roleResult.Succeeded)
                     {
@@ -267,14 +271,14 @@ namespace LeverageTechnology.Server.Controllers
             };
         }
 
-        [HttpPost("GUS")]
-        public async Task<List<AppUser>> GetUsers(string username)
+        [HttpGet("GUS")]
+        public async Task<List<AppUser>> GetUsers()
         {
             return await _context.GetAllUsers();
         }
 
-        [HttpPost("GRS")]
-        public async Task<List<AppRole>> GetRoles(string username)
+        [HttpGet("GRS")]
+        public async Task<List<AppRole>> GetRoles()
         {
             return await _context.GetAllRoles();
         }

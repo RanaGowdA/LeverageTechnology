@@ -7,7 +7,7 @@
 
 @inject ApiService ApiService
 
-<MudGrid Class="pa-2">
+<MudGrid Class="pa-2" Style="object-fit: fill;">
     <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
         <MudDataGrid Class="pt-3 pa-4" FixedHeader="true" T="AppUser" Items="@AppUsers" EditMode="DataGridEditMode.Form"
                      Bordered="true" Dense="true" SelectedItemsChanged="@SelectedItemsChanged">
@@ -24,11 +24,12 @@
                 <PropertyColumn Property="x => x.FirstName" Title="FirstName" />
                 <PropertyColumn Property="x => x.LastName" Title="LastName" />
                 <PropertyColumn Property="x => x.UserName" Title="UserName" />
-                <PropertyColumn Property="x => x.PasswordHash" Title="Password" /> 
+                <PropertyColumn Property="x => x.PasswordHash" Title="Password" />  
+                <PropertyColumn Property="x => x.IsAdmin" Title="IsAdmin" />
                 <TemplateColumn CellClass="d-flex justify-end">
                     <CellTemplate>
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Info" OnClick="InfoItem" />
-                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="StartedEditingItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" Disabled OnClick="StartedEditingItem" />
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete" OnClick="DeleteItem" />
                     </CellTemplate>
                 </TemplateColumn>
@@ -45,7 +46,7 @@
 
 
     #region Variables
-     
+
     public List<AppUser> AppUsers { get; set; }
     public List<AppRole> AppRoles { get; set; }
     public AppUser SelectedAppUser { get; set; }
@@ -73,56 +74,46 @@
     }
 
     async void StartedEditingItem()
-    {
+    { 
+        //var parameters = new DialogParameters();
+        //parameters.Add("IsUsers", true);
+        //NewUser = new RegisterDto();
+  
+        //NewUser.FirstName = SelectedAppUser.FirstName;
+        //NewUser.LastName = SelectedAppUser.LastName;
+        //NewUser.Password = SelectedAppUser.PasswordHash;
+        //NewUser.UserName = SelectedAppUser.UserName;
+        //NewUser.IsAdmin = SelectedAppUser.IsAdmin;
+        //parameters.Add("NewUser", SelectedAppUser);
+        //parameters.Add("Roles", AppRoles);
+        //var dialog = await Dialog.ShowAsync<AdminDialog>("Edit User", parameters, DialogSettings.DialogOptionsAddEditLead);
+        //var result = await dialog.Result;
 
-        var parameters = new DialogParameters();
-        parameters.Add("IsUsers", true);
-        parameters.Add("NewUser", SelectedAppUser);
-        parameters.Add("Roles", AppRoles);
-        var dialog = await Dialog.ShowAsync<AdminDialog>("Edit User", parameters, DialogSettings.DialogOptionsAddEditLead);
-        var result = await dialog.Result;
-
-        if (!result.Canceled)
-        {
-            //// create request object
-            //var request = new HttpRequestMessage(HttpMethod.Post, "api/UserAdmin/EU");
-
-            //// set request body
-            //request.Content = new StringContent(JsonSerializer.Serialize(SelectedAppUser), Encoding.UTF8, "application/json");
-
-            ////// add authorization header
-            ////request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
-
-            //// send request
-            //var response = await httpClient.SendAsync(request);
-
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    ShowColorAlerts("AppUser Added", Severity.Success);
-            //    AppUsers = (await CS.SyncAppUsersTable()).ToList();
-            //    StateHasChanged();
-            //}
-            //else
-            //{
-            //    ShowColorAlerts("Fail To Add", Severity.Error);
-            //}
-        }
-        else
-        {
-            ShowColorAlerts("AppUser Not Added", Severity.Info);
-        }
+        //if (!result.Canceled)
+        //{
+            
+        //}
+        //else
+        //{
+        //    ShowColorAlerts("AppUser Not Added", Severity.Info);
+        //}
     }
 
     async void InfoItem()
     {
         var parameters = new DialogParameters();
         parameters.Add("IsUsers", true);
-        parameters.Add("IsInfo", true);
-        parameters.Add("NewUser", SelectedAppUser);
+        parameters.Add("IsInfo", true); 
+        NewUser = new RegisterDto();
+        NewUser.FirstName = SelectedAppUser.FirstName;
+        NewUser.LastName = SelectedAppUser.LastName;
+        NewUser.Password = SelectedAppUser.PasswordHash;
+        NewUser.UserName = SelectedAppUser.UserName; 
+        NewUser.IsAdmin = SelectedAppUser.IsAdmin; 
+        parameters.Add("NewUser", NewUser);
         parameters.Add("Roles", AppRoles);
         var dialog = await Dialog.ShowAsync<AdminDialog>("AppRole", parameters, DialogSettings.DialogOptionsAddEditLead);
-        var result = await dialog.Result;
-
+        var result = await dialog.Result; 
     }
 
     async void DeleteItem()
@@ -157,44 +148,33 @@
 
     async void CreateNewAppUser()
     {
-        //NewUser = new UserLoginDto(); 
-        //var parameters = new DialogParameters();
-        //parameters.Add("IsUsers", true);
-        //parameters.Add("NewUser", NewUser);
-        //parameters.Add("Roles", AppRoles);
-        //var dialog = await Dialog.ShowAsync<AdminDialog>("Add User", parameters, DialogSettings.DialogOptionsAddEditLead);
-        //var result = await dialog.Result;
+        NewUser = new RegisterDto(); 
+        var parameters = new DialogParameters();
+        parameters.Add("IsUsers", true);
+        parameters.Add("NewUser", NewUser);
+        parameters.Add("Roles", AppRoles);
+        var dialog = await Dialog.ShowAsync<AdminDialog>("Add User", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
 
-        //if (!result.Canceled)
-        //{
-        //    // create request object
-        //    var request = new HttpRequestMessage(HttpMethod.Post, "api/UserAdmin/AU");
-
-        //    // set request body
-        //    request.Content = new StringContent(JsonSerializer.Serialize(NewUser), Encoding.UTF8, "application/json");
-
-        //    //// add authorization header
-        //    //request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
-
-        //    // send request
-        //    var response = await httpClient.SendAsync(request);
-
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        AppUsers = (await CS.SyncAppUsersTable()).ToList();
-        //        ShowColorAlerts("AppUser Added", Severity.Success);
-        //        StateHasChanged();
-
-        //    }
-        //    else
-        //    {
-        //        ShowColorAlerts("Fail To Add", Severity.Error);
-        //    }
-        //}
-        //else
-        //{
-        //    ShowColorAlerts("AppUser Not Added", Severity.Info);
-        //}
+        if (!result.Canceled)
+        {
+            // create request object
+            var request = await ApiService.Register(NewUser); 
+            if (request.Succeeded)
+            {
+                AppUsers = await ApiService.GetUsers();
+                ShowColorAlerts("AppUser Added", Severity.Success);
+                StateHasChanged(); 
+            }
+            else
+            {
+                ShowColorAlerts("Fail To Add", Severity.Error);
+            }
+        }
+        else
+        {
+            ShowColorAlerts("AppUser Not Added", Severity.Info);
+        }
 
     }
 

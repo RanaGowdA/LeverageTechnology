@@ -1,6 +1,84 @@
-﻿@page "/ET"
-<h3>ExpTableVC</h3>
+﻿@page "/ET" 
+@using LeverageTechnology.Shared;
 
-@code {
+@inject ApiService ApiService
+
+<MudGrid Class="pa-2" Style="object-fit: fill;">
+    <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
+        <MudDataGrid Class="pt-3 pa-4" FixedHeader="true" T="ExpTable" Items="@ExpTables" EditMode="DataGridEditMode.Form"
+                     Bordered="true" Dense="true" SelectedItemsChanged="@SelectedItemsChanged">
+
+            <ToolBarContent>
+                <MudText Typo="Typo.h5" Color="Color.Primary">Sub Tables</MudText>
+                <MudSpacer />
+                <MudSpacer />
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="CreateNewAppUser" />
+            </ToolBarContent>
+
+            <Columns>
+                <SelectColumn T="ExpTable" />
+                <PropertyColumn Property="x => x.Id" Title="FirstName" />
+                <PropertyColumn Property="x => x.Page" Title="Page" />
+                <PropertyColumn Property="x => x.Introduction" Title="Introduction" />
+                <PropertyColumn Property="x => x.Video" Title="Video" />
+                <TemplateColumn CellClass="d-flex justify-end">
+                    <CellTemplate>
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Info" OnClick="InfoItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" Disabled OnClick="StartedEditingItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete" OnClick="DeleteItem" />
+                    </CellTemplate>
+                </TemplateColumn>
+            </Columns>
+            <PagerContent>
+                <MudDataGridPager T="ExpTable" RowsPerPageString="10" />
+            </PagerContent>
+        </MudDataGrid>
+    </MudItem>
+</MudGrid>
+
+@code { 
+    public List<ExpTable> ExpTables { get; set; } 
+    public ExpTable SelectedAppUser { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        ExpTables = ApiService.ExpTables;
+
+    }
+
+
+    #region Events
+
+    void SelectedItemsChanged(HashSet<ExpTable> items)
+    {
+        var selectedItem = items.FirstOrDefault();
+        if (selectedItem != null)
+        {
+            SelectedAppUser = selectedItem;
+        }
+    }
+
+    async void StartedEditingItem()
+    {
+
+    }
+
+    async void InfoItem()
+    {
+    }
+
+    async void DeleteItem()
+    {
+    }
+
+    async void CreateNewAppUser()
+    {
+
+    }
+
+
+    #endregion Events
 
 }
+

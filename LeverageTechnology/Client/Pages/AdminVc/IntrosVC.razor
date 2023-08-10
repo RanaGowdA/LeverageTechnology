@@ -1,6 +1,86 @@
 ﻿@page "/IN"
-<h3>IntrosVC</h3>
+
+@using LeverageTechnology.Shared;
+
+@inject ApiService ApiService
+
+<MudGrid Class="pa-2" Style="object-fit: fill;">
+    <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
+        <MudDataGrid Class="pt-3 pa-4" FixedHeader="true" T="Intro" Items="@Intros" EditMode="DataGridEditMode.Form"
+                     Bordered="true" Dense="true" SelectedItemsChanged="@SelectedItemsChanged">
+
+            <ToolBarContent>
+                <MudText Typo="Typo.h5" Color="Color.Primary">Intro</MudText>
+                <MudSpacer />
+                <MudSpacer />
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="CreateNewAppUser" />
+            </ToolBarContent>
+
+            <Columns>
+                <SelectColumn T="CaseStudy" />
+                <PropertyColumn Property="x => x.Id" Title="FirstName" />
+                <PropertyColumn Property="x => x.Page" Title="LastName" />
+                <PropertyColumn Property="x => x.Title" Title="UserName" />
+                <PropertyColumn Property="x => x.Introduction" Title="Introduction" />
+                <PropertyColumn Property="x => x.Keywords" Title="Keywords" />
+                <TemplateColumn CellClass="d-flex justify-end">
+                    <CellTemplate>
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Info" OnClick="InfoItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" Disabled OnClick="StartedEditingItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete" OnClick="DeleteItem" />
+                    </CellTemplate>
+                </TemplateColumn>
+            </Columns>
+            <PagerContent>
+                <MudDataGridPager T="CaseStudy" RowsPerPageString="10" />
+            </PagerContent>
+        </MudDataGrid>
+    </MudItem>
+</MudGrid>
 
 @code {
+
+    public List<Intro> Intros { get; set; }
+    public Intro SelectedAppUser { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        Intros = ApiService.Intros;
+
+    }
+
+
+    #region Events
+
+    void SelectedItemsChanged(HashSet<Intro> items)
+    {
+        var selectedItem = items.FirstOrDefault();
+        if (selectedItem != null)
+        {
+            SelectedAppUser = selectedItem;
+        }
+    }
+
+    async void StartedEditingItem()
+    {
+
+    }
+
+    async void InfoItem()
+    {
+    }
+
+    async void DeleteItem()
+    {
+    }
+
+    async void CreateNewAppUser()
+    {
+
+    }
+
+
+    #endregion Events
 
 }

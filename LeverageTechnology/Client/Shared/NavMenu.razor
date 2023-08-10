@@ -1,5 +1,7 @@
-﻿@inject ApiService ApiService
-﻿
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@inject ApiService ApiService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
 <MudNavMenu Color="Color.Dark" Dense="false" Bordered="true">
     <MudNavLink Href="/dashboard" Icon="@Icons.Material.Filled.Dashboard" IconColor="Color.Primary">Dashboard</MudNavLink>
 
@@ -13,13 +15,27 @@
         }
     }
 
-    <AuthorizeView Roles="Admin, User">
+    @if (IsAdmin)
+    {
         <MudNavGroup Icon="@Icons.Material.Filled.Settings" Title="Configurations" Expanded="true">
             <MudNavLink Icon="@Icons.Material.Filled.AdminPanelSettings" Href="/UA">User Management</MudNavLink>
             <MudNavLink Icon="@Icons.Material.Filled.Cases" Href="/CS">CaseStudies</MudNavLink>
             <MudNavLink Icon="@Icons.Material.Filled.TableChart" Href="/ET">ExpTables</MudNavLink>
             <MudNavLink Icon="@Icons.Material.Filled.ViewHeadline" Href="/IN">Intros</MudNavLink>
         </MudNavGroup>
-    </AuthorizeView>
+    }
+
 
 </MudNavMenu>
+
+
+
+@code { 
+    public bool IsAdmin;
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        IsAdmin = authState.User.IsInRole("ADMIN");
+    }
+
+}
