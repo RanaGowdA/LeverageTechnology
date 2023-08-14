@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xdf/5xAZqJtYvK9iy6MUty0DErpCJKpscH+TH5yNDoA=",
+  "Hash": "fZYJf2Whc0qnjE1SXuAXUGL7LlTzRSTVwrR6L0Uipj4=",
   "Source": "LeverageTechnology.Server",
   "BasePath": "_content/LeverageTechnology.Server",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "LeverageTechnology.Client",
       "GetPublishAssetsTargets": "ComputeFilesToPublish;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "BuildProjectReferences=false;ResolveAssemblyReferencesFindRelatedSatellites=true;_PublishingBlazorWasmProject=true;Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "BuildProjectReferences=false;ResolveAssemblyReferencesFindRelatedSatellites=true;_PublishingBlazorWasmProject=true",
       "AdditionalPublishPropertiesToRemove": "NoBuild;RuntimeIdentifier;WebPublishProfileFile;TargetFramework",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
     }
   ],
@@ -182,23 +182,6 @@
       "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\6.0.18\\runtimes\\browser-wasm\\native\\dotnet.wasm"
     },
     {
-      "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
-      "SourceId": "LeverageTechnology.Client",
-      "SourceType": "Project",
-      "ContentRoot": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt.dat",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "native",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\6.0.18\\runtimes\\browser-wasm\\native\\icudt.dat"
-    },
-    {
       "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt_CJK.dat",
       "SourceId": "LeverageTechnology.Client",
       "SourceType": "Project",
@@ -248,6 +231,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\6.0.18\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
+    },
+    {
+      "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Project",
+      "ContentRoot": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt.dat",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "native",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\6.0.18\\runtimes\\browser-wasm\\native\\icudt.dat"
     },
     {
       "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\LeverageTechnology.Client.dll",
@@ -7322,23 +7322,6 @@
       "OriginalItemSpec": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\scopedcss\\bundle\\LeverageTechnology.Client.styles.css"
     },
     {
-      "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\service-worker\\service-worker.js",
-      "SourceId": "LeverageTechnology.Client",
-      "SourceType": "Project",
-      "ContentRoot": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\service-worker\\",
-      "BasePath": "/",
-      "RelativePath": "service-worker.js",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorServiceWorker",
-      "AssetTraitValue": "ServiceWorkerJs",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "wwwroot\\service-worker.js"
-    },
-    {
       "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\service-worker-assets.js.build",
       "SourceId": "LeverageTechnology.Client",
       "SourceType": "Project",
@@ -7354,6 +7337,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net6.0\\service-worker-assets.js.build"
+    },
+    {
+      "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\service-worker\\service-worker.js",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Project",
+      "ContentRoot": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\obj\\Debug\\net6.0\\service-worker\\",
+      "BasePath": "/",
+      "RelativePath": "service-worker.js",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorServiceWorker",
+      "AssetTraitValue": "ServiceWorkerJs",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "wwwroot\\service-worker.js"
     },
     {
       "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\css\\app.css",
@@ -7405,6 +7405,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Project",
+      "ContentRoot": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/open-iconic/FONT-LICENSE",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
@@ -7507,23 +7524,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
-    },
-    {
-      "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
-      "SourceId": "LeverageTechnology.Client",
-      "SourceType": "Project",
-      "ContentRoot": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "css/open-iconic/FONT-LICENSE",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\css\\open-iconic\\ICON-LICENSE",

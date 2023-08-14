@@ -69,7 +69,7 @@
       "url": "images\/loginbg.jpg"
     },
     {
-      "hash": "sha256-rkICWhLQM6BxYQlFm0W4MXGIyWI6F1xODojekWxf53E=",
+      "hash": "sha256-PYW6o6I9Sa+h4AveOAWfuoGDvwa86An1spzD4kIl1P8=",
       "url": "index.html"
     },
     {
@@ -369,5 +369,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "7oznEh8F"
+  "version": "2HjW8ju+"
 };

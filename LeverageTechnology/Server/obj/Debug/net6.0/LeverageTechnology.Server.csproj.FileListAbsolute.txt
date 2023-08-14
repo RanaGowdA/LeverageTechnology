@@ -104,6 +104,7 @@ C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Serve
 C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LeverageTechnology.Client.staticwebassets.runtime.json
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\appsettings.Development.json
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\appsettings.json
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\BlazorDebugProxy\BrowserDebugHost.dll
@@ -112,9 +113,9 @@ R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\S
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\BlazorDebugProxy\Microsoft.CodeAnalysis.CSharp.dll
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\BlazorDebugProxy\Microsoft.CodeAnalysis.dll
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\BlazorDebugProxy\Newtonsoft.Json.dll
-R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LeverageTechnology.Client.staticwebassets.runtime.json
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LeverageTechnology.Server.staticwebassets.runtime.json
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LeverageTechnology.Server.exe
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LT.db
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LeverageTechnology.Server.deps.json
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LeverageTechnology.Server.runtimeconfig.json
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LeverageTechnology.Server.dll
@@ -210,3 +211,25 @@ R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\S
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\obj\Debug\net6.0\LeverageTechnology.Server.pdb
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\obj\Debug\net6.0\LeverageTechnology.Server.genruntimeconfig.cache
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\obj\Debug\net6.0\ref\LeverageTechnology.Server.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\System.Drawing.Common.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\System.Runtime.Caching.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\System.Security.Permissions.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\System.Windows.Extensions.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll

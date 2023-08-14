@@ -47,12 +47,12 @@ namespace LeverageTechnology.Server.Controllers
                 IsAdmin = true
             };
 
-            //var appRole = new AppRole() { Name = RoleConstants.SuperAdminRole };
-            //var result1 = await _roleManager.CreateAsync(appRole);
-            //var appRole2 = new AppRole() { Name = RoleConstants.AdminRole };
-            //var result2 = await _roleManager.CreateAsync(appRole2);
-            //var appRole3 = new AppRole() { Name = RoleConstants.UserRole };
-            //var result3 = await _roleManager.CreateAsync(appRole3);
+            var appRole = new AppRole() { Name = RoleConstants.SuperAdminRole };
+            var result1 = await _roleManager.CreateAsync(appRole);
+            var appRole2 = new AppRole() { Name = RoleConstants.AdminRole };
+            var result2 = await _roleManager.CreateAsync(appRole2);
+            var appRole3 = new AppRole() { Name = RoleConstants.UserRole };
+            var result3 = await _roleManager.CreateAsync(appRole3);
 
             var appUser = new AppUser()
             {

@@ -69,7 +69,7 @@
       "url": "images\/loginbg.jpg"
     },
     {
-      "hash": "sha256-rkICWhLQM6BxYQlFm0W4MXGIyWI6F1xODojekWxf53E=",
+      "hash": "sha256-PYW6o6I9Sa+h4AveOAWfuoGDvwa86An1spzD4kIl1P8=",
       "url": "index.html"
     },
     {
@@ -881,7 +881,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-2DJObe47\/9DgqFMuNx47yEZLyztkOHh8P+DvQeNjf0s=",
+      "hash": "sha256-Iww31ANFa3KZuR4RkhiSYt3FJ7PKpMdeFNq3l3Td1h8=",
       "url": "_framework\/dotnet.6.0.18.cj7xi80tko.js"
     },
     {
@@ -917,11 +917,11 @@
       "url": "_framework\/LeverageTechnology.Shared.pdb"
     },
     {
-      "hash": "sha256-EH5nTEeaID3NY5szuXB5lcfkKSPMGiiEHRTIVDiM7MM=",
+      "hash": "sha256-SQOH9ceJYVBinVEXkzMrJV0nrFUintW7SJvrCRukoV4=",
       "url": "_framework\/LeverageTechnology.Client.dll"
     },
     {
-      "hash": "sha256-W8hiopTeOsJZYZqFoknMk8xwrbgAUPpMJJ04mM3EyB0=",
+      "hash": "sha256-dadkxScZvvcrhWwORGvtirdbap\/xb1KHKAvNiFNDkvk=",
       "url": "_framework\/LeverageTechnology.Client.pdb"
     },
     {
@@ -929,7 +929,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-wKVoEBPB9eOqK3+q+9C7mkrFtEvGT9YIsa3b8Zpdgn4=",
+      "hash": "sha256-YhJh4\/j7wnxU3Vbpn+jIe2YDDus0ohOrzcZlUDG7ALk=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -945,5 +945,5 @@
       "url": "_content\/MudBlazor.ThemeManager\/MudBlazorThemeManager.css"
     }
   ],
-  "version": "2RLoo\/XD"
+  "version": "7tEh\/tHs"
 };

@@ -16,7 +16,7 @@ builder.Services.AddRazorPages();
 #region Database  
 
 builder.Services.AddDbContext<AdminDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), options => options.EnableRetryOnFailure()));
 
 builder.Services.AddScoped<IApiDbContext, ApiDbContext>();
 builder.Services.AddScoped<IClientRepo, ClientRepo>();
@@ -59,6 +59,11 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseCors(options => { options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); });
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseHttpsRedirection();
 

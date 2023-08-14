@@ -874,14 +874,20 @@ C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Clien
 C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\Blazored.LocalStorage.dll.gz
 C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\Blazored.LocalStorage.dll
 C:\Users\ng937c8\Documents\AXISCADES\LeverageTechnology\LeverageTechnology\Client\obj\Debug\net6.0\build-gz\niFBJ95E.gz
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\blazor.boot.json
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\blazor.webassembly.js
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\Blazored.LocalStorage.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.6.0.18.cj7xi80tko.js
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.timezones.blat
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.wasm
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\icudt.dat
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\icudt_CJK.dat
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\icudt_EFIGS.dat
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\icudt_no_CJK.dat
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\LeverageTechnology.Client.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\LeverageTechnology.Client.pdb
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\LeverageTechnology.Shared.dll
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\LeverageTechnology.Shared.pdb
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.dll
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.dll
@@ -1081,12 +1087,6 @@ R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\C
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\System.Xml.XPath.dll
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\System.Xml.XPath.XDocument.dll
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\WindowsBase.dll
-R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\blazor.boot.json
-R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.6.0.18.cj7xi80tko.js
-R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\LeverageTechnology.Client.dll
-R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\LeverageTechnology.Client.pdb
-R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\LeverageTechnology.Shared.dll
-R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\LeverageTechnology.Shared.pdb
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\System.ComponentModel.TypeConverter.dll.gz
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\System.Reflection.Metadata.dll.gz
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\bin\Debug\net6.0\wwwroot\_framework\System.IO.Compression.ZipFile.dll.gz
