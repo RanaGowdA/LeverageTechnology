@@ -13,7 +13,6 @@ namespace LeverageTechnology.Shared
         public string Page { get; set; }
         public string Title { get; set; }
         public string Summary { get; set; }
-        public string Image { get; set; }
         public string Video { get; set; }
         public string Keywords { get; set; }
     }

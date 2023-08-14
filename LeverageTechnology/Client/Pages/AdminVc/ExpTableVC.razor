@@ -1,5 +1,7 @@
 ﻿@page "/ET" 
+@using LeverageTechnology.Client.Utility;
 @using LeverageTechnology.Shared;
+@using LeverageTechnology.Shared.Models.DTOs;
 
 @inject ApiService ApiService
 
@@ -12,7 +14,7 @@
                 <MudText Typo="Typo.h5" Color="Color.Primary">Sub Tables</MudText>
                 <MudSpacer />
                 <MudSpacer />
-                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="CreateNewAppUser" />
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" Disabled OnClick="CreateNewExpTable" />
             </ToolBarContent>
 
             <Columns>
@@ -24,8 +26,8 @@
                 <TemplateColumn CellClass="d-flex justify-end">
                     <CellTemplate>
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Info" OnClick="InfoItem" />
-                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" Disabled OnClick="StartedEditingItem" />
-                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete" OnClick="DeleteItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit"  OnClick="StartedEditingItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete" Disabled OnClick="DeleteItem" />
                     </CellTemplate>
                 </TemplateColumn>
             </Columns>
@@ -38,7 +40,8 @@
 
 @code { 
     public List<ExpTable> ExpTables { get; set; } 
-    public ExpTable SelectedAppUser { get; set; }
+    public ExpTable SelectedExpTable { get; set; }
+    public ExpTable ExpTable { get; set; }
 
 
     protected override async Task OnInitializedAsync()
@@ -55,26 +58,82 @@
         var selectedItem = items.FirstOrDefault();
         if (selectedItem != null)
         {
-            SelectedAppUser = selectedItem;
+            SelectedExpTable = selectedItem;
         }
     }
 
     async void StartedEditingItem()
     {
+        var parameters = new DialogParameters();
+        parameters.Add("IsExpTable", true);
+        parameters.Add("NewExpTable", SelectedExpTable);
+        var dialog = await Dialog.ShowAsync<CaseStudySVC>("Edit CaseStudy", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
 
+        if (!result.Canceled)
+        {
+            // create request object
+            var request = await ApiService.EditExTable(SelectedExpTable);
+            if (request)
+            {
+                ExpTables = await ApiService.GetExpTables();
+                ShowColorAlerts("ExpTable Added", Severity.Success);
+                StateHasChanged();
+            }
+            else
+            {
+                ShowColorAlerts("Fail To Add", Severity.Error);
+            }
+        }
+        else
+        {
+            ShowColorAlerts("ExpTable Not Added", Severity.Info);
+        }
     }
 
     async void InfoItem()
     {
+        var parameters = new DialogParameters();
+        parameters.Add("IsExpTable", true);
+        parameters.Add("IsInfo", true);
+        parameters.Add("NewExpTable", SelectedExpTable);
+        var dialog = await Dialog.ShowAsync<CaseStudySVC>("ExpTable", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
     }
 
     async void DeleteItem()
     {
+        DataIdDTO dataIdDto = new DataIdDTO();
+        dataIdDto.Id = SelectedExpTable.Id;
+
+        // create request object
+        var request = await ApiService.DeleteExTable(dataIdDto);
+        if (request)
+        {
+            ExpTables = await ApiService.GetExpTables();
+            ShowColorAlerts("ExpTable Deleted", Severity.Success);
+            StateHasChanged();
+        }
+        else
+        {
+            ShowColorAlerts("Fail To Delete", Severity.Error);
+        }
     }
 
-    async void CreateNewAppUser()
-    {
+    async void CreateNewExpTable()
+    { 
+    }
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="TextToDisplay"></param>
+    /// <param name="AlertSeverity"></param>
+    private void ShowColorAlerts(string TextToDisplay, Severity AlertSeverity)
+    {
+        SnackbarService.Clear();
+        SnackbarService.Configuration.PositionClass = Defaults.Classes.Position.BottomCenter;
+        SnackbarService.Add(TextToDisplay, AlertSeverity);
     }
 
 

@@ -1,5 +1,6 @@
 ﻿
 using LeverageTechnology.Shared;
+using LeverageTechnology.Shared.Models.DTOs;
 
 namespace LeverageTechnology.Client
 {
@@ -92,5 +93,108 @@ namespace LeverageTechnology.Client
 
             return httpResponse.Response;
         }
+
+
+
+        public async Task<bool> AddCaseStudy(CaseStudy caseStudy)
+        {
+            var httpResponse = await _httpService.Post<CaseStudy, bool>(
+               "/api/Client/ACS", caseStudy);
+
+            if (!httpResponse.Success)
+                throw new ApplicationException(await httpResponse.GetBody());
+            return httpResponse.Response;
+        }
+
+
+        public async Task<bool> AddExTable(ExpTable expTable)
+        {
+            var httpResponse = await _httpService.Post<ExpTable, bool>(
+               "/api/Client/AET", expTable);
+
+            if (!httpResponse.Success)
+                throw new ApplicationException(await httpResponse.GetBody());
+            return httpResponse.Response;
+        }
+
+
+        public async Task<bool> AddIntro(Intro intro)
+        {
+            var httpResponse = await _httpService.Post<Intro, bool>(
+               "/api/Client/AI", intro);
+
+            if (!httpResponse.Success)
+                throw new ApplicationException(await httpResponse.GetBody());
+            return httpResponse.Response;
+        }
+
+
+
+        public async Task<bool> EditCaseStudy(CaseStudy caseStudy)
+        {
+            var httpResponse = await _httpService.Post<CaseStudy, bool>(
+               "/api/Client/ECS", caseStudy);
+
+            if (!httpResponse.Success)
+                throw new ApplicationException(await httpResponse.GetBody());
+            return httpResponse.Response;
+        }
+
+
+        public async Task<bool> EditExTable(ExpTable expTable)
+        {
+            var httpResponse = await _httpService.Post<ExpTable, bool>(
+               "/api/Client/EET", expTable);
+
+            if (!httpResponse.Success)
+                throw new ApplicationException(await httpResponse.GetBody());
+            return httpResponse.Response;
+        }
+
+
+        public async Task<bool> EditIntro(Intro intro)
+        {
+            var httpResponse = await _httpService.Post<Intro, bool>(
+               "/api/Client/EI", intro);
+
+            if (!httpResponse.Success)
+                throw new ApplicationException(await httpResponse.GetBody());
+            return httpResponse.Response;
+        }
+
+
+        public async Task<bool> DeleteCaseStudy(DataIdDTO dataIdDTO)
+        {
+            var httpResponse = await _httpService.Post<DataIdDTO, bool>(
+               "/api/Client/DCS", dataIdDTO);
+
+            if (!httpResponse.Success)
+                throw new ApplicationException(await httpResponse.GetBody());
+            return httpResponse.Response;
+        }
+
+
+        public async Task<bool> DeleteExTable(DataIdDTO dataIdDTO)
+        {
+            var httpResponse = await _httpService.Post<DataIdDTO, bool>(
+               "/api/Client/DET", dataIdDTO);
+
+            if (!httpResponse.Success)
+                throw new ApplicationException(await httpResponse.GetBody());
+            return httpResponse.Response;
+        }
+
+
+        public async Task<bool> DeleteIntro(DataIdDTO dataIdDTO)
+        {
+            var httpResponse = await _httpService.Post<DataIdDTO, bool>(
+               "/api/Client/DI", dataIdDTO);
+
+            if (!httpResponse.Success)
+                throw new ApplicationException(await httpResponse.GetBody());
+            return httpResponse.Response;
+        }
+
+
     }
 }

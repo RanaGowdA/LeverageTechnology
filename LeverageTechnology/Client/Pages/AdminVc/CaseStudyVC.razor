@@ -1,5 +1,7 @@
 ﻿@page "/CS"
+@using LeverageTechnology.Client.Utility;
 @using LeverageTechnology.Shared;
+@using LeverageTechnology.Shared.Models.DTOs;
 
 @inject ApiService ApiService
 
@@ -12,7 +14,7 @@
                 <MudText Typo="Typo.h5" Color="Color.Primary">CaseStudies</MudText>
                 <MudSpacer />
                 <MudSpacer />
-                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="CreateNewAppUser" />
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="CreateNewCaseStudy" />
             </ToolBarContent>
 
             <Columns>
@@ -25,7 +27,7 @@
                 <TemplateColumn CellClass="d-flex justify-end">
                     <CellTemplate>
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Info" OnClick="InfoItem" />
-                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" Disabled OnClick="StartedEditingItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="StartedEditingItem" />
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete" OnClick="DeleteItem" />
                     </CellTemplate>
                 </TemplateColumn>
@@ -41,12 +43,16 @@
     public List<CaseStudy> CaseStudies { get; set; }
     public List<ExpTable> ExpTables { get; set; }
     public List<Intro> Intros { get; set; }
-    public CaseStudy SelectedAppUser { get; set; }
+    public CaseStudy SelectedCaseStudy { get; set; }
+    public CaseStudy CaseStudy { get; set; }
+
+
+
 
 
     protected override async Task OnInitializedAsync()
     {
-        CaseStudies = ApiService.CaseStudies;
+        CaseStudies = await ApiService.GetCaseStudy();
 
     }
 
@@ -58,28 +64,115 @@
         var selectedItem = items.FirstOrDefault();
         if (selectedItem != null)
         {
-            SelectedAppUser = selectedItem;
+            SelectedCaseStudy = selectedItem;
         }
     }
 
     async void StartedEditingItem()
     {
-        
+        var parameters = new DialogParameters();
+        parameters.Add("IsCaseStudy", true);
+        parameters.Add("NewCaseStudy", SelectedCaseStudy);
+        var dialog = await Dialog.ShowAsync<CaseStudySVC>("Edit CaseStudy", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
+
+        if (!result.Canceled)
+        {
+            // create request object
+            var request = await ApiService.EditCaseStudy(SelectedCaseStudy);
+            if (request)
+            {
+                CaseStudies = await ApiService.GetCaseStudy();
+                ShowColorAlerts("CaseStudy Added", Severity.Success);
+                StateHasChanged();
+            }
+            else
+            {
+                ShowColorAlerts("Fail To Add", Severity.Error);
+            }
+        }
+        else
+        {
+            ShowColorAlerts("CaseStudy Not Added", Severity.Info);
+        }
     }
 
     async void InfoItem()
-    { 
+    {
+        var parameters = new DialogParameters();
+        parameters.Add("IsCaseStudy", true);
+        parameters.Add("NewCaseStudy", SelectedCaseStudy);
+        parameters.Add("IsInfo", true);
+        var dialog = await Dialog.ShowAsync<CaseStudySVC>("CaseStudy", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
     }
 
     async void DeleteItem()
-    { 
+    {
+        DataIdDTO dataIdDto = new DataIdDTO();
+        dataIdDto.Id = SelectedCaseStudy.Id;
+
+        // create request object
+        var request = await ApiService.DeleteCaseStudy(dataIdDto);
+        if (request)
+        {
+            CaseStudies = await ApiService.GetCaseStudy();
+            ShowColorAlerts("CaseStudy Deleted", Severity.Success);
+            StateHasChanged();
+        }
+        else
+        {
+            ShowColorAlerts("Fail To Delete", Severity.Error);
+        }
     }
 
-    async void CreateNewAppUser()
-    { 
+    async void CreateNewCaseStudy()
+    {
+        CaseStudy = new CaseStudy();
+        CaseStudy.Page = "cad-automation";
+        CaseStudy.Title = "2D Drawing Generation";
+        CaseStudy.Summary = "Generate the 2D Drawing From 3D";
+        CaseStudy.Video = "02568";
+        CaseStudy.Keywords = "cad-automation";
 
+        var parameters = new DialogParameters();
+        parameters.Add("IsCaseStudy", true);
+        parameters.Add("NewCaseStudy", CaseStudy);
+        var dialog = await Dialog.ShowAsync<CaseStudySVC>("Add CaseStudy", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
+
+        if (!result.Canceled)
+        {
+            // create request object
+            var request = await ApiService.AddCaseStudy(CaseStudy);
+            if (request)
+            {
+                CaseStudies = await ApiService.GetCaseStudy();
+                ShowColorAlerts("CaseStudy Added", Severity.Success);
+                StateHasChanged();
+            }
+            else
+            {
+                ShowColorAlerts("Fail To Add", Severity.Error);
+            }
+        }
+        else
+        {
+            ShowColorAlerts("CaseStudy Not Added", Severity.Info);
+        }
     }
-     
+
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="TextToDisplay"></param>
+    /// <param name="AlertSeverity"></param>
+    private void ShowColorAlerts(string TextToDisplay, Severity AlertSeverity)
+    {
+        SnackbarService.Clear();
+        SnackbarService.Configuration.PositionClass = Defaults.Classes.Position.BottomCenter;
+        SnackbarService.Add(TextToDisplay, AlertSeverity);
+    }
 
     #endregion Events
 

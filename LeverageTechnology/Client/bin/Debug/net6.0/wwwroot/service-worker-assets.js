@@ -61,6 +61,10 @@
       "url": "icon-512.png"
     },
     {
+      "hash": "sha256-4bi26HorTDA2E3CqHUfnlH0fwkvKZ5haaMshhGL\/Jls=",
+      "url": "images\/loginbg.jpg"
+    },
+    {
       "hash": "sha256-rkICWhLQM6BxYQlFm0W4MXGIyWI6F1xODojekWxf53E=",
       "url": "index.html"
     },
@@ -901,19 +905,19 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-UaW1y5gV7AbGGjVOlAy2mts888fTHHVsqNFApBj3Q8g=",
+      "hash": "sha256-t+WBBQ9pORn0\/UR2tRv6qb9rQDfXdn6Gw1AyrO3qXOo=",
       "url": "_framework\/LeverageTechnology.Shared.dll"
     },
     {
-      "hash": "sha256-1LagS\/w\/j0tL0+Nzl+CSsakh+Nu\/AJpLd5eRNIxpfPc=",
+      "hash": "sha256-FdANGUicKjcBgB\/zhpqt6VZ5wh3lqneRfKRH7TIIG\/c=",
       "url": "_framework\/LeverageTechnology.Shared.pdb"
     },
     {
-      "hash": "sha256-QKnMyEGrUy2DwHRsGEWl3bobXdwEAXcXCTCfkxxmjGc=",
+      "hash": "sha256-Y0Uy9MzzWMPJbhUHHbneLEI1UFnLIzBFEyYi05x9y7Y=",
       "url": "_framework\/LeverageTechnology.Client.dll"
     },
     {
-      "hash": "sha256-+gEHjqBIDAWKFHtRNevypNa\/WA3c3MTr2ramRIPl\/ew=",
+      "hash": "sha256-USYV25ufVYE63UBoPhuIZwqddaWqFQUntflbyswq+v8=",
       "url": "_framework\/LeverageTechnology.Client.pdb"
     },
     {
@@ -921,7 +925,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-iRQD4Z4o\/n+Kv1fWRn3K4zxLmw82\/ICD8heIx4Lc5KU=",
+      "hash": "sha256-YQLmvUh30qEVo0wC5jZ0DYuilqdaODJ4Ct12f6wtl9U=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -937,5 +941,5 @@
       "url": "_content\/MudBlazor.ThemeManager\/MudBlazorThemeManager.css"
     }
   ],
-  "version": "Q5uv7Qf1"
+  "version": "WsDmxo3j"
 };

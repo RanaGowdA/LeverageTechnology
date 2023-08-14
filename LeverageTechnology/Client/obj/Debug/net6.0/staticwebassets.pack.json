@@ -81,6 +81,10 @@
       "PackagePath": "staticwebassets\\icon-512.png"
     },
     {
+      "Id": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\images\\loginbg.jpg",
+      "PackagePath": "staticwebassets\\images\\loginbg.jpg"
+    },
+    {
       "Id": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

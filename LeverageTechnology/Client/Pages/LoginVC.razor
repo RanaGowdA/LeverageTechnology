@@ -5,18 +5,18 @@
 @inject ILoginService LoginService
 @inject NavigationManager NavManager
 @inject ApiService ApiService
- 
+
 
 <MudContainer Class="d-flex justify-center align-content-center " MaxWidth="MaxWidth.ExtraExtraLarge" Style="height:100vh;min-width:100vw;
-                                                        background: rgb(4,0,71);
-                                                        background: linear-gradient(90deg, rgba(4,0,71,0.8855917366946778) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">
+                                                            background: url(images/loginbg.jpg) no-repeat center center fixed;
+                                                            background-size: cover;">
     <MudPaper Class="d-flex align-self-center" Height="50%" Width="50%" Elevation="0">
         <MudGrid Justify="Justify.Center" Style="height:98%">
-            <MudItem id="loginDetails " Class="loginDetails" xs="12" sm="6">
-                <MudPaper Class="d-flex align-center justify-center mud-width-full mud-theme-primary" Style="height:100%">
-                    <MudImage Src="login_1.svg"></MudImage>
-                </MudPaper>
-            </MudItem>
+            @*   <MudItem id="loginDetails " Class="loginDetails" xs="12" sm="6">
+            <MudPaper Class="d-flex align-center justify-center mud-width-full mud-theme-primary" Style="height:100%">
+            <MudImage Src="images/loginbg.jpg"></MudImage>
+            </MudPaper>
+            </MudItem>*@
             <MudItem id="logincarasole pa-2" xs="12" sm="6">
                 <MudPaper Class="d-flex align-center justify-center mud-width-full pa-3" Style="height:100%;width:100%">
                     <EditForm Model="@loginModel" OnValidSubmit="OnLoginSubmit">
@@ -62,7 +62,7 @@
         var response = await ApiService.LoginUser(dto);
         if (response.Succeeded)
         {
-            await LoginService.Login(response);  
+            await LoginService.Login(response);
             await ApiService.GetCaseStudy();
             await ApiService.GetExpTables();
             await ApiService.GetrIntro();

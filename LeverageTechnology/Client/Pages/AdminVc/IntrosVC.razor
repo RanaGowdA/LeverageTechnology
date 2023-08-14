@@ -1,6 +1,8 @@
 ﻿@page "/IN"
 
+@using LeverageTechnology.Client.Utility;
 @using LeverageTechnology.Shared;
+@using LeverageTechnology.Shared.Models.DTOs;
 
 @inject ApiService ApiService
 
@@ -17,7 +19,7 @@
             </ToolBarContent>
 
             <Columns>
-                <SelectColumn T="CaseStudy" />
+                <SelectColumn T="Intro" />
                 <PropertyColumn Property="x => x.Id" Title="FirstName" />
                 <PropertyColumn Property="x => x.Page" Title="LastName" />
                 <PropertyColumn Property="x => x.Title" Title="UserName" />
@@ -26,7 +28,7 @@
                 <TemplateColumn CellClass="d-flex justify-end">
                     <CellTemplate>
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Info" OnClick="InfoItem" />
-                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" Disabled OnClick="StartedEditingItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit"   OnClick="StartedEditingItem" />
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete" OnClick="DeleteItem" />
                     </CellTemplate>
                 </TemplateColumn>
@@ -41,12 +43,13 @@
 @code {
 
     public List<Intro> Intros { get; set; }
-    public Intro SelectedAppUser { get; set; }
+    public Intro SelectedIntro { get; set; }
+    public Intro Intro { get; set; }
 
 
     protected override async Task OnInitializedAsync()
     {
-        Intros = ApiService.Intros;
+        Intros = await ApiService.GetrIntro();
 
     }
 
@@ -58,27 +61,118 @@
         var selectedItem = items.FirstOrDefault();
         if (selectedItem != null)
         {
-            SelectedAppUser = selectedItem;
+            SelectedIntro = selectedItem;
         }
     }
 
     async void StartedEditingItem()
     {
+        var parameters = new DialogParameters();
+        parameters.Add("IsIntro", true);
+        parameters.Add("NewIntro", SelectedIntro);
+        var dialog = await Dialog.ShowAsync<CaseStudySVC>("Edit Intro", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
 
+        if (!result.Canceled)
+        {
+            // create request object
+            var request = await ApiService.EditIntro(SelectedIntro);
+            if (request)
+            {
+                Intros = await ApiService.GetrIntro();
+                ShowColorAlerts("Intro Added", Severity.Success);
+                StateHasChanged();
+            }
+            else
+            {
+                ShowColorAlerts("Fail To Add", Severity.Error);
+            }
+        }
+        else
+        {
+            ShowColorAlerts("Intro Not Added", Severity.Info);
+        }
     }
 
     async void InfoItem()
     {
+        var parameters = new DialogParameters();
+        parameters.Add("IsIntro", true);
+        parameters.Add("NewIntro", SelectedIntro);
+        parameters.Add("IsInfo", true);
+        var dialog = await Dialog.ShowAsync<CaseStudySVC>("Intro", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
     }
 
     async void DeleteItem()
     {
+         DataIdDTO dataIdDto = new DataIdDTO();
+        dataIdDto.Id = SelectedIntro.Id;
+
+        // create request object
+        var request = await ApiService.DeleteIntro(dataIdDto);
+        if (request)
+        {
+            Intros = await ApiService.GetrIntro();
+            ShowColorAlerts("CaseStudy Deleted", Severity.Success);
+            StateHasChanged();
+        }
+        else
+        {
+            ShowColorAlerts("Fail To Delete", Severity.Error);
+        }        
     }
 
     async void CreateNewAppUser()
     {
+        Intro = new Intro();
+        Intro.Page = "digital-twin";
+        Intro.Title = "Digital Twin";
+        Intro.Introduction = "Digital Twin Inrtoduction";
+        Intro.Keywords = "Digital Twin";
 
+        var parameters = new DialogParameters();
+        parameters.Add("IsIntro", true);
+        parameters.Add("NewIntro", Intro);
+        var dialog = await Dialog.ShowAsync<CaseStudySVC>("Add Intro", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
+
+        if (!result.Canceled)
+        {
+            // create request object
+            var request = await ApiService.AddIntro(Intro);
+            if (request)
+            {
+                Intros = await ApiService.GetrIntro();
+                _ = await ApiService.GetCaseStudy();
+                _ = await ApiService.GetExpTables();
+                _ = await ApiService.GetrIntro();
+                ShowColorAlerts("Intro Added", Severity.Success);
+                StateHasChanged();
+            }
+            else
+            {
+                ShowColorAlerts("Fail To Add", Severity.Error);
+            }
+        }
+        else
+        {
+            ShowColorAlerts("Intro Not Added", Severity.Info);
+        }
     }
+
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="TextToDisplay"></param>
+    /// <param name="AlertSeverity"></param>
+    private void ShowColorAlerts(string TextToDisplay, Severity AlertSeverity)
+    {
+        SnackbarService.Clear();
+        SnackbarService.Configuration.PositionClass = Defaults.Classes.Position.BottomCenter;
+        SnackbarService.Add(TextToDisplay, AlertSeverity);
+    }
+
 
 
     #endregion Events

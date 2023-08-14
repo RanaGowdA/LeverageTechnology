@@ -1,0 +1,107 @@
+﻿@using LeverageTechnology.Shared;
+
+<MudDialog>
+    <DialogContent>
+
+        @if (IsCaseStudy)
+        {
+            <MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+                <MudTextField T="string" @bind-Value="@NewCaseStudy.Page" Label="Page" Required="true" RequiredError="Page Name is required!" />
+                <MudTextField T="string" @bind-Value="@NewCaseStudy.Title" Label="Title" Required="true" RequiredError="Title is required!" />
+                <MudTextField T="string" @bind-Value="@NewCaseStudy.Video" Label="Video" Required="true" RequiredError="Video Number is required!" />
+                <MudTextField T="string" @bind-Value="@NewCaseStudy.Summary" Label="Summary" Required="true" RequiredError="Summaryis required!" />
+                <MudTextField T="string" @bind-Value="@NewCaseStudy.Keywords" Label="Keywords" Required="false" RequiredError="Keywords is required!" />
+            </MudForm>
+        }
+
+
+        @if (IsExpTable)
+        {
+            <MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+                <MudTextField T="string" @bind-Value="@NewExpTable.Page" Label="Page" Required="true" RequiredError="Page Name is required!" />
+                <MudTextField T="string" @bind-Value="@NewExpTable.Introduction" Label="Title" Required="true" RequiredError="Introduction is required!" />
+                <MudTextField T="string" @bind-Value="@NewExpTable.Video" Label="Video" Required="true" RequiredError="Video Number is required!" />
+                <MudTextField T="string" @bind-Value="@NewExpTable.keywords" Label="keywords" Required="false" RequiredError="Keywords is required!" />
+            </MudForm>
+
+        }
+
+
+        @if (IsIntro)
+        {
+
+            <MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+                <MudTextField T="string" @bind-Value="@NewIntro.Page" Label="Page" Required="true" RequiredError="Page Name is required!" />
+                <MudTextField T="string" @bind-Value="@NewIntro.Title" Label="Title" Required="true" RequiredError="Title is required!" />
+                <MudTextField T="string" @bind-Value="@NewIntro.Introduction" Label="Video" Required="true" RequiredError="Introduction is required!" />
+                <MudTextField T="string" @bind-Value="@NewIntro.Keywords" Label="Keywords" Required="false" RequiredError="Keywords is required!" />
+            </MudForm>
+        }
+
+
+
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        @if (IsInfo)
+        {
+            <MudButton Color="Color.Primary" OnClick="Submit">Ok</MudButton>
+        }
+        else
+        {
+            <MudButton Color="Color.Primary" OnClick="Submit" Disabled="@(!success)">Add</MudButton>
+        }
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+    private string value { get; set; } = "Nothing selected";
+    private IEnumerable<string> options { get; set; }
+
+    [Parameter]
+    public bool IsInfo { get; set; }
+    [Parameter]
+    public bool IsCaseStudy { get; set; }
+    [Parameter]
+    public CaseStudy NewCaseStudy { get; set; }
+    [Parameter]
+    public bool IsExpTable { get; set; }
+    [Parameter]
+    public ExpTable NewExpTable { get; set; }
+    [Parameter]
+    public bool IsIntro { get; set; }
+    [Parameter]
+    public Intro NewIntro { get; set; }
+
+
+    bool success;
+    string[] errors = { };
+    MudTextField<string> pwField1;
+    MudForm form;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+    }
+
+    ///// <summary>
+    /// When User Hits Ok/Add
+    /// </summary>
+    void Submit()
+    {
+        MudDialog.Close(DialogResult.Ok(true));
+    }
+
+
+    ///// <summary>
+    /// When User Hits Cancel/Close
+    /// </summary>
+    void Cancel()
+    {
+        MudDialog.Cancel();
+    }
+
+
+}

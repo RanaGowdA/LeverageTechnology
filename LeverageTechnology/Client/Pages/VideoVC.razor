@@ -3,6 +3,8 @@
 
 @inject ApiService ApiService
 
+
+<MudText Class="ml-4" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h6">@Introduction</MudText>
 <MudTabs Elevation="4" Rounded="true" Centered="true" AlwaysShowScrollButtons="true" Style="@($"color:{Colors.Indigo.Darken4}")" Class="mt-4 mr-5 ml-5">
 
     @foreach (var item in @Casestudies)
@@ -11,7 +13,7 @@
         <MudTabPanel Text="@item.Title">
             <MudGrid Elevation="1" Class="py-8 px-10">
                 <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
-                    <MudText Class="mt-1" Typo="Typo.h4" Align="Align.Center">@item.Summary</MudText>
+                    <MudText Class="mt-1" Typo="Typo.h4" Align="Align.Center" Color="Color.Primary">@item.Summary</MudText>
 
                     <MudContainer Class="mt-1 row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -36,11 +38,13 @@
 @code {
     [Parameter]
     public string Casestudy { get; set; }
+    public string Introduction { get; set; }
     public List<CaseStudy> Casestudies { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
         var intro = ApiService.Intros.FirstOrDefault(x => x.Title == Casestudy);
+        Introduction = intro.Introduction;
         Casestudies = ApiService.CaseStudies.Where(x => x.Page == intro.Page).ToList();
 
 
@@ -48,6 +52,7 @@
     protected override void OnParametersSet()
     {
         var intro = ApiService.Intros.FirstOrDefault(x => x.Title == Casestudy);
+        Introduction = intro.Introduction;
         Casestudies = ApiService.CaseStudies.Where(x => x.Page == intro.Page).ToList();
     }
 }

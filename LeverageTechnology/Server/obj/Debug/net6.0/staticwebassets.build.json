@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mQg5H/Nw9os0M7Bor1lzl6tB4SDyPHquMKO36ZhqR6E=",
+  "Hash": "T1Zr1qnKtwpdPwP7TKjaN1sUh0c85u8zt3h76YvgFgo=",
   "Source": "LeverageTechnology.Server",
   "BasePath": "_content/LeverageTechnology.Server",
   "Mode": "Default",
@@ -7609,6 +7609,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\icon-512.png"
+    },
+    {
+      "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\images\\loginbg.jpg",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "images/loginbg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\loginbg.jpg"
     },
     {
       "Identity": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\index.html",
