@@ -6,51 +6,65 @@
 @inject NavigationManager NavManager
 @inject ApiService ApiService
 
-
 <MudContainer Class="d-flex justify-center align-content-center " MaxWidth="MaxWidth.ExtraExtraLarge" Style="height:100vh;min-width:100vw;
-                                                            background: url(images/loginbg.jpg) no-repeat center center fixed;
-                                                            background-size: cover;">
-    <MudPaper Class="d-flex align-self-center" Height="50%" Width="50%" Elevation="0">
-        <MudGrid Justify="Justify.Center" Style="height:98%">
-            @*   <MudItem id="loginDetails " Class="loginDetails" xs="12" sm="6">
-            <MudPaper Class="d-flex align-center justify-center mud-width-full mud-theme-primary" Style="height:100%">
-            <MudImage Src="images/loginbg.jpg"></MudImage>
-            </MudPaper>
-            </MudItem>*@
+                                                        background: rgb(2,0,36);
+                                                        background: linear-gradient(199deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 20%, rgba(0,212,255,1) 100%);">
+    <MudPaper Class="d-flex align-self-center" Height="50%" Width="50%" Elevation="3">
+        <MudGrid Justify="Justify.Center" Style="height:60%;vertical-align:central">
+
             <MudItem id="logincarasole pa-2" xs="12" sm="6">
-                <MudPaper Class="d-flex align-center justify-center mud-width-full pa-3" Style="height:100%;width:100%">
-                    <EditForm Model="@loginModel" OnValidSubmit="OnLoginSubmit">
-                        <DataAnnotationsValidator />
+                <div class="login-form">
+                    <MudCard Elevation="2">
 
-                        <div class="form-group mb-4">
-                            <label for="username">Username:</label>
-                            <InputText id="username" class="form-control" @bind-Value="loginModel.Username" />
-                            <ValidationMessage For="@(() => loginModel.Username)" />
-                        </div>
+                        <MudCardHeader Class="d-flex align-content-center justify-content-center flex-wrap flex-grow-1 gap-4">
+                            <MudImage Src="images/axiscades.png" ObjectPosition="ObjectPosition.Center" ObjectFit="ObjectFit.Fill"></MudImage>
+                        </MudCardHeader>
+                        <MudText Class="shades-text text-white" Typo="Typo.h3" Align="Align.Center" Style="font-size:x-large">Leverage_Technology</MudText>
+                        <MudCardContent>
+                            <MudTextField Class="m-2 shades-text " id="username" @bind-Value="loginModel.Username" Label="Username" Variant="Variant.Filled" Margin="Margin.Dense"
+                                          For="@(() => loginModel.Username)"></MudTextField>
 
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <InputText id="password" class="form-control" @bind-Value="loginModel.Password" type="password" />
-                            <ValidationMessage For="@(() => loginModel.Password)" />
-                        </div>
-
-                        <div class="form-group text-center mt-4">
-                            <button type="submit" class="btn btn-primary">Login</button>
-                        </div>
-
-                        @if (!string.IsNullOrEmpty(errorMessage))
-                        {
-                            <div class="alert alert-danger mt-3">@errorMessage</div>
-                        }
-
-                    </EditForm>
-                </MudPaper>
+                            <MudTextField Class="m-2 shades-text " id="password" @bind-Value="loginModel.Password" InputType="InputType.Password" Label="Password" Variant="Variant.Filled" Margin="Margin.Dense"
+                                          For="@(() => loginModel.Password)"></MudTextField>
+                        </MudCardContent>
+                        <MudCardActions Class="d-flex align-content-center justify-content-center flex-wrap flex-grow-1 gap-4">
+                            <MudButton Class="shades-text text-white" ButtonType="ButtonType.Submit" Variant="Variant.Filled"
+                                       OnClick="OnLoginSubmit">SignIn</MudButton>
+                        </MudCardActions>
+                    </MudCard>
+                </div>
             </MudItem>
         </MudGrid>
     </MudPaper>
 </MudContainer>
 
+<style>
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn-login {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }
+</style>
+
 @code {
+
+
 
     private LoginVm loginModel = new LoginVm();
     private string errorMessage = string.Empty;
@@ -74,3 +88,5 @@
         }
     }
 }
+
+

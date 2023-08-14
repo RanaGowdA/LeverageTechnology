@@ -5,39 +5,46 @@
 @inject ILoginService LoginService
 @inject NavigationManager NavManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
-<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_themeManager.Theme" />
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="MyCustomTheme" />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 @*@if (IsAuthenticated)
 {
 *@
-    <MudLayout>
-        <MudAppBar Elevation="1">
-            <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-            <MudText Typo="Typo.h5" Class="ml-3">Leverage Technology</MudText>
-            <MudSpacer />
-            <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
-            <MudMenu Icon="@Icons.Material.Filled.Build" AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopCenter">
-                <MudSwitch @bind-Checked="@_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" Label="Dark Mode" />
-                <MudMenuItem OnClick="LogOut">Logout</MudMenuItem>
-                <MudMenuItem>
-                </MudMenuItem>
-            </MudMenu>
-        </MudAppBar>
-        <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
-            <NavMenu></NavMenu>
-        </MudDrawer>
-        <MudMainContent>
-            @Body
-        </MudMainContent>
-    </MudLayout>
+<MudLayout>
+    <MudAppBar Elevation="1" Color="Color.Primary">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <MudText Typo="Typo.h5" Class="ml-3">Leverage Technology</MudText>
+        <MudSpacer />
+        <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
+        <MudFab Icon="@Icons.Material.Filled.Logout" OnClick="LogOut"></MudFab> 
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+        <NavMenu></NavMenu>
+    </MudDrawer>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
 @*} *@
 
 @code {
     bool _drawerOpen = true;
 
     private ThemeManagerTheme _themeManager = new ThemeManagerTheme();
+    MudTheme MyCustomTheme = new MudTheme()
+        {
+            Palette = new PaletteLight()
+            {
+                Primary = Colors.Blue.Default,
+                Secondary = Colors.BlueGrey.Darken4,
+            },
+            PaletteDark = new PaletteDark()
+            {
+                Primary = Colors.Blue.Lighten1
+            }
+        };
     public bool _themeManagerOpen = false;
     private bool _isDarkMode;
     private bool IsAuthenticated;
@@ -59,7 +66,7 @@
         //else
         //{
         //    IsAuthenticated = false;
-        //    NavManager.NavigateTo("/"); 
+        //    NavManager.NavigateTo("/");
         //}
     }
 

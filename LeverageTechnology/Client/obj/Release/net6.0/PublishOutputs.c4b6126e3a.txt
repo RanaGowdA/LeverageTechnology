@@ -1,0 +1,1 @@
+R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Client\obj\Release\net6.0\browser-wasm\PubTmp\Out\web.config
