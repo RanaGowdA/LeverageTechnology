@@ -40,10 +40,10 @@ namespace LeverageTechnology.Server.Controllers
         {
             var dto = new RegisterDto()
             {
-                FirstName = "Rana",
-                LastName = "Gowd",
+                FirstName = "Sriram",
+                LastName = "JK",
                 Password = "Password@123",
-                UserName = "rana",
+                UserName = "Sriram",
                 IsAdmin = true
             };
 
@@ -71,7 +71,7 @@ namespace LeverageTechnology.Server.Controllers
                 {
                     var appUserFromDb = await _context.GetAppUserByUsername(dto.UserName);
 
-                    var roleResult = await _userManager.AddToRoleAsync(appUserFromDb, RoleConstants.UserRole);
+                    var roleResult = await _userManager.AddToRoleAsync(appUserFromDb, RoleConstants.AdminRole);
 
                     if (roleResult.Succeeded)
                     {
@@ -131,7 +131,6 @@ namespace LeverageTechnology.Server.Controllers
             return result.Succeeded;
         }
 
-        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<LoginResultDto> Register(RegisterDto dto)
         {
