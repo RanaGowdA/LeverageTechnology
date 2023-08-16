@@ -43,6 +43,10 @@
 
     protected async override Task OnInitializedAsync()
     {
+        await ApiService.GetCaseStudy();
+        await ApiService.GetExpTables();
+        await ApiService.GetrIntro();
+
         var intro = ApiService.Intros.FirstOrDefault(x => x.Title == Casestudy);
         Introduction = intro.Introduction;
         Casestudies = ApiService.CaseStudies.Where(x => x.Page == intro.Page).ToList();

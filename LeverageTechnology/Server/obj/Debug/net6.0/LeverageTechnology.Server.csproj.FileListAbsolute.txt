@@ -115,7 +115,6 @@ R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\S
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\BlazorDebugProxy\Newtonsoft.Json.dll
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LeverageTechnology.Server.staticwebassets.runtime.json
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LeverageTechnology.Server.exe
-R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LT.db
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LeverageTechnology.Server.deps.json
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LeverageTechnology.Server.runtimeconfig.json
 R:\Web Development\RanaAdigowni\ProjectX\LeverageTechnology\LeverageTechnology\Server\bin\Debug\net6.0\LeverageTechnology.Server.dll
