@@ -65,6 +65,10 @@
       "url": "images\/axiscades.png"
     },
     {
+      "hash": "sha256-cVv\/h2qgo4ljPdiLAKpy7GpY48Frd90hPCeH7S7t8\/U=",
+      "url": "images\/bg.gif"
+    },
+    {
       "hash": "sha256-4bi26HorTDA2E3CqHUfnlH0fwkvKZ5haaMshhGL\/Jls=",
       "url": "images\/loginbg.jpg"
     },
@@ -101,7 +105,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-fiMIeoW9XRafMoVx+f27RdrhKxUcEeb4u+Ui3FdOnkM=",
+      "hash": "sha256-EtA\/h8wePLgUNBWq9a58GmLYtxhcS\/3dMg40SGYHokk=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -109,7 +113,7 @@
       "url": "_framework\/Blazored.LocalStorage.dll"
     },
     {
-      "hash": "sha256-Jd88apBF3GhFxmtup8kPwi52Tzh0fDPzqmFMEld8w40=",
+      "hash": "sha256-Rgk9vsBMyvGvOEu26pxNtu4qWt8le4gv\/EX+jgEVk4w=",
       "url": "_framework\/LeverageTechnology.Client.dll"
     },
     {
@@ -209,7 +213,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-TkpvuxutJ195gs8trfSnsOMD\/zO7GGCouvEA9bwYRG8=",
+      "hash": "sha256-ka778VApfnVhakBQ4kTss9ZjWrNDQQjixLM5RXdqytM=",
       "url": "_framework\/MudBlazor.dll"
     },
     {
@@ -369,5 +373,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "XtuJu0tW"
+  "version": "gj790Qyr"
 };

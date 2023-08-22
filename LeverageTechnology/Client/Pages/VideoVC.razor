@@ -6,8 +6,7 @@
 
 <MudText Class="ml-4" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h6">@Introduction</MudText>
 <MudTabs Elevation="4" Rounded="true" Centered="true" AlwaysShowScrollButtons="true" Style="@($"color:{Colors.Indigo.Darken4}")" Class="mt-4 mr-5 ml-5">
-
-    @foreach (var item in @Casestudies)
+    @foreach (var item in Casestudies)
     {
         var videosrc = "https://player.vimeo.com/video/" + @item.Video + '?';
         <MudTabPanel Text="@item.Title">
@@ -43,6 +42,7 @@
 
     protected async override Task OnInitializedAsync()
     {
+        Casestudies = new List<CaseStudy>();
         await ApiService.GetCaseStudy();
         await ApiService.GetExpTables();
         await ApiService.GetrIntro();
