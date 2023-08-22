@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2GaCOQo8ZbUxGYnCphK/U2BmQxzKFzr/xQlF19toaAg=",
+  "Hash": "qew0muSrtNDvLAjEsHsbKp2KAq9xB0gPMgB8Aj6X2PI=",
   "Source": "LeverageTechnology.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -7665,6 +7665,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\axiscades.png"
+    },
+    {
+      "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\images\\axiscadeslogo.png",
+      "SourceId": "LeverageTechnology.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "images/axiscadeslogo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\axiscadeslogo.png"
     },
     {
       "Identity": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\images\\bg.gif",

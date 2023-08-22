@@ -1,9 +1,11 @@
-﻿@page "/ET" 
+﻿@page "/ET"
 @using LeverageTechnology.Client.Utility;
 @using LeverageTechnology.Shared;
 @using LeverageTechnology.Shared.Models.DTOs;
 
 @inject ApiService ApiService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavManager
 
 <MudGrid Class="pa-2" Style="object-fit: fill;">
     <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
@@ -26,7 +28,7 @@
                 <TemplateColumn CellClass="d-flex justify-end">
                     <CellTemplate>
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Info" OnClick="InfoItem" />
-                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit"  OnClick="StartedEditingItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="StartedEditingItem" />
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete" Disabled OnClick="DeleteItem" />
                     </CellTemplate>
                 </TemplateColumn>
@@ -38,15 +40,24 @@
     </MudItem>
 </MudGrid>
 
-@code { 
-    public List<ExpTable> ExpTables { get; set; } 
+@code {
+    public List<ExpTable> ExpTables { get; set; }
     public ExpTable SelectedExpTable { get; set; }
     public ExpTable ExpTable { get; set; }
 
 
     protected override async Task OnInitializedAsync()
     {
-        ExpTables = ApiService.ExpTables;
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState?.User;
+        if (user?.Identity is not null && user.Identity.IsAuthenticated)
+        {
+            ExpTables = ApiService.ExpTables;
+        }
+        else
+        {
+            NavManager.NavigateTo("/");
+        }
 
     }
 
@@ -121,7 +132,7 @@
     }
 
     async void CreateNewExpTable()
-    { 
+    {
     }
 
     /// <summary>

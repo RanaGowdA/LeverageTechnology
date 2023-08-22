@@ -1,12 +1,14 @@
 ﻿@page "/dashboard"
 
 @inject ApiService ApiService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavManager
 
 <MudTabs Elevation="4" Rounded="true" Centered="true" AlwaysShowScrollButtons="true" Style="@($"color:{Colors.Indigo.Darken4}")" Class="mt-4 mr-5 ml-5">
     <MudTabPanel Text="@title">
         <MudGrid Elevation="1" Class="py-8 px-10">
             <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
-                <MudText Typo="Typo.h4" Color="Color.Primary">@introduction</MudText>
+                <MudText Align="Align.Center" Typo="Typo.h4" Color="Color.Primary">@introduction</MudText>
             </MudItem>
             <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
                 <MudContainer Class="mt-1 row">
@@ -32,9 +34,21 @@
 
     protected async override Task OnInitializedAsync()
     {
-        await ApiService.GetExpTables();
-        videosrc = "https://player.vimeo.com/video/" + ApiService.ExpTables[0].Video + '?';
-        introduction = ApiService.ExpTables[0].Introduction;
-        title = ApiService.ExpTables[0].Page;
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState?.User;
+        if (user?.Identity is not null && user.Identity.IsAuthenticated)
+        {
+            if (ApiService.ExpTables == null)
+            {
+                await ApiService.SyncData();
+            }
+            videosrc = "https://player.vimeo.com/video/" + ApiService.ExpTables[0].Video + '?';
+            introduction = ApiService.ExpTables[0].Introduction;
+            title = ApiService.ExpTables[0].Page;
+        }
+        else
+        {
+            NavManager.NavigateTo("/"); 
+        }
     }
 }

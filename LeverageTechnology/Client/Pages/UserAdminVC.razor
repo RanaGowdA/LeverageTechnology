@@ -1,4 +1,6 @@
 ﻿@page "/UA"
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavManager
 
 <MudTabs Elevation="4" Rounded="true" AlwaysShowScrollButtons="true" Style="@($"color:{Colors.Indigo.Darken4}")" Class="mt-4 mr-5 ml-5">
     <MudTabPanel Text="Users" Icon="@Icons.Material.Filled.VerifiedUser">
@@ -10,5 +12,18 @@
 </MudTabs>
 
 @code {
+
+    protected async override Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState?.User;
+        if (user?.Identity is not null && user.Identity.IsAuthenticated)
+        { 
+        }
+        else
+        {
+            NavManager.NavigateTo("/");
+        }
+    }
 
 }
