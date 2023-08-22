@@ -5,6 +5,8 @@
 @using LeverageTechnology.Shared.Models.DTOs;
 
 @inject ApiService ApiService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavManager
 
 <MudGrid Class="pa-2" Style="object-fit: fill;">
     <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
@@ -49,7 +51,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        Intros = await ApiService.GetrIntro();
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState?.User;
+        if (user?.Identity is not null && user.Identity.IsAuthenticated)
+        {
+            Intros = await ApiService.GetrIntro();
+        }
+        else
+        {
+            NavManager.NavigateTo("/");
+        }
 
     }
 

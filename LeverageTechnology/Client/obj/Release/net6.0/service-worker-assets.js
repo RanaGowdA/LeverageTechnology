@@ -65,6 +65,10 @@
       "url": "images\/axiscades.png"
     },
     {
+      "hash": "sha256-9dOWyxk74brn4SveUUFHFlu\/jbI2k5Qx\/\/ZVaxdtK18=",
+      "url": "images\/axiscadeslogo.png"
+    },
+    {
       "hash": "sha256-cVv\/h2qgo4ljPdiLAKpy7GpY48Frd90hPCeH7S7t8\/U=",
       "url": "images\/bg.gif"
     },
@@ -105,7 +109,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-2YlRlFu1FBReraxi7TcOkmIm6lKrKRnQRRldJ5QD3lk=",
+      "hash": "sha256-sluZuRg4y1k8mNcE82JPg7oF1O5ws7utGlzwQ1OS+VI=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -113,7 +117,7 @@
       "url": "_framework\/Blazored.LocalStorage.dll"
     },
     {
-      "hash": "sha256-s2uwx7AIzr7Ze7mpvjG1gacpfKhvO02jGbwWOaMsLO8=",
+      "hash": "sha256-rW1eRCKSYuNOW4LTfn73FcQYQRyFrLY4CVLgCb2jzJ0=",
       "url": "_framework\/LeverageTechnology.Client.dll"
     },
     {
@@ -213,7 +217,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-ka778VApfnVhakBQ4kTss9ZjWrNDQQjixLM5RXdqytM=",
+      "hash": "sha256-5TXTg9c0NeGgCet5OOT\/NZjqMaFLou26n3lol89CIBU=",
       "url": "_framework\/MudBlazor.dll"
     },
     {
@@ -289,7 +293,7 @@
       "url": "_framework\/System.ObjectModel.dll"
     },
     {
-      "hash": "sha256-sBWdGXkyyGBB8WIdeHL01cz8MQKwXRIxflYymTzLGKs=",
+      "hash": "sha256-7nsmDGBHgGsqvTyqo0MuxiC7y6Cjlg312F9V2nlHj+Q=",
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
@@ -317,7 +321,7 @@
       "url": "_framework\/System.Runtime.Numerics.dll"
     },
     {
-      "hash": "sha256-E7H4YdD4MZQDaHqoqiCq1WTlrfhGRTU954l466As\/2o=",
+      "hash": "sha256-cjqg90fpI5qztwY6vwfknE6lHEtUQ+OXtW0qUQ4YI3k=",
       "url": "_framework\/System.Security.Claims.dll"
     },
     {
@@ -353,7 +357,7 @@
       "url": "_framework\/dotnet.6.0.18.ollp035r0g.js"
     },
     {
-      "hash": "sha256-jJn1AJK5NR8L7yBIA00BMJs2r\/ila1\/ZOXD+dSt3JuY=",
+      "hash": "sha256-C8Fqu\/z8ElKxNVr+ONDtKdB9KDz0s42g2Wbhv0sBJLI=",
       "url": "_framework\/dotnet.wasm"
     },
     {
@@ -373,5 +377,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "aXiHCuUo"
+  "version": "vI25R5yq"
 };

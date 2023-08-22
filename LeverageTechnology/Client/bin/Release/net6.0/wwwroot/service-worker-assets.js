@@ -65,6 +65,10 @@
       "url": "images\/axiscades.png"
     },
     {
+      "hash": "sha256-9dOWyxk74brn4SveUUFHFlu\/jbI2k5Qx\/\/ZVaxdtK18=",
+      "url": "images\/axiscadeslogo.png"
+    },
+    {
       "hash": "sha256-cVv\/h2qgo4ljPdiLAKpy7GpY48Frd90hPCeH7S7t8\/U=",
       "url": "images\/bg.gif"
     },
@@ -921,11 +925,11 @@
       "url": "_framework\/LeverageTechnology.Shared.pdb"
     },
     {
-      "hash": "sha256-Rgk9vsBMyvGvOEu26pxNtu4qWt8le4gv\/EX+jgEVk4w=",
+      "hash": "sha256-s2uwx7AIzr7Ze7mpvjG1gacpfKhvO02jGbwWOaMsLO8=",
       "url": "_framework\/LeverageTechnology.Client.dll"
     },
     {
-      "hash": "sha256-WOg2iIBoA84RDoHzIOWVpOaz7rh3X6t\/gETnGGHPCAQ=",
+      "hash": "sha256-tuVzBN3Od5Dazb3cC91AeboA4KphepPj7gO3gOaM1+I=",
       "url": "_framework\/LeverageTechnology.Client.pdb"
     },
     {
@@ -933,7 +937,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-5V8OCVaayG\/rprDATAkSiCZYiUCG7Gv3p61Jcy+wok0=",
+      "hash": "sha256-jKsRXLj8w\/zibV3vh\/\/LAzXdttjZwj5KlpC013DN2fY=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -949,5 +953,5 @@
       "url": "_content\/MudBlazor.ThemeManager\/MudBlazorThemeManager.css"
     }
   ],
-  "version": "UHbmBitc"
+  "version": "vMi5ezZS"
 };

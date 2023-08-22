@@ -85,6 +85,10 @@
       "PackagePath": "staticwebassets\\images\\axiscades.png"
     },
     {
+      "Id": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\images\\axiscadeslogo.png",
+      "PackagePath": "staticwebassets\\images\\axiscadeslogo.png"
+    },
+    {
       "Id": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Client\\wwwroot\\images\\bg.gif",
       "PackagePath": "staticwebassets\\images\\bg.gif"
     },

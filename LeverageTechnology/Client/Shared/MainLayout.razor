@@ -4,6 +4,7 @@
 
 @inject ILoginService LoginService
 @inject NavigationManager NavManager
+@inject ApiService ApiService
 @inject AuthenticationStateProvider AuthenticationStateProvider
 <MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="MyCustomTheme" />
 <MudDialogProvider />
@@ -15,10 +16,13 @@
 <MudLayout>
     <MudAppBar Elevation="1" Color="Color.Primary">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <MudImage Src="images/axiscadeslogo.png"></MudImage>
         <MudText Typo="Typo.h5" Class="ml-3">Leverage Technology</MudText>
         <MudSpacer />
         <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
-        <MudFab Icon="@Icons.Material.Filled.Logout" OnClick="LogOut"></MudFab> 
+        <MudTooltip Text="Logout">
+            <MudFab Icon="@Icons.Material.Filled.Logout" OnClick="LogOut" Color="Color.Primary"></MudFab>
+        </MudTooltip>
     </MudAppBar>
     <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
         <NavMenu></NavMenu>
@@ -37,7 +41,7 @@
         {
             Palette = new PaletteLight()
             {
-                Primary = Colors.Blue.Default,
+                Primary = Colors.Blue.Darken3,
                 Secondary = Colors.BlueGrey.Darken4,
             },
             PaletteDark = new PaletteDark()
@@ -68,6 +72,7 @@
         //    IsAuthenticated = false;
         //    NavManager.NavigateTo("/");
         //}
+        await ApiService.SyncData();
     }
 
     void DrawerToggle()
