@@ -17,6 +17,9 @@ namespace LeverageTechnology.Client
         public ApiService(IHttpService httpService)
         {
             _httpService = httpService;
+            CaseStudies = new List<CaseStudy>();
+            ExpTables = new List<ExpTable>();
+            Intros = new List<Intro>();
         }
 
         public async Task<LoginResultDto> LoginUser(LoginDto dto)

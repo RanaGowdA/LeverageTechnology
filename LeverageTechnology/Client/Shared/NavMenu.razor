@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Components.Authorization
 @inject ApiService ApiService
+@inject NavigationManager NavManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
 <MudNavMenu Color="Color.Dark" Dense="false" Bordered="true">
@@ -7,33 +8,44 @@
 
     @if (ApiService != null)
     {
-        var caseStudies = ApiService.Intros.Select(x => x.Title).Distinct().ToList();
-        @foreach (var CaseStudy in caseStudies)
+        @if (ApiService.Intros != null)
         {
-            var link = "/Landing/" + CaseStudy;
-            <MudNavLink Icon="@Icons.Material.Filled.Segment" IconColor="Color.Primary" Href="@link">@CaseStudy</MudNavLink>
+            var caseStudies = ApiService.Intros.Select(x => x.Title).Distinct().ToList();
+            @foreach (var CaseStudy in caseStudies)
+            {
+                var link = "/Landing/" + CaseStudy;
+                <MudNavLink Icon="@Icons.Material.Filled.Segment" IconColor="Color.Primary" Href="@link">@CaseStudy</MudNavLink>
+            }
+
+            @if (IsAdmin)
+            {
+                <MudNavGroup Icon="@Icons.Material.Filled.Settings" Title="Configurations" Expanded="true">
+                    <MudNavLink Icon="@Icons.Material.Filled.AdminPanelSettings" Href="/UA">User Management</MudNavLink>
+                    <MudNavLink Icon="@Icons.Material.Filled.Cases" Href="/CS">CaseStudies</MudNavLink>
+                    <MudNavLink Icon="@Icons.Material.Filled.TableChart" Href="/ET">ExpTables</MudNavLink>
+                    <MudNavLink Icon="@Icons.Material.Filled.ViewHeadline" Href="/IN">Intros</MudNavLink>
+                </MudNavGroup>
+            }
         }
     }
-
-    @if (IsAdmin)
+    else
     {
-        <MudNavGroup Icon="@Icons.Material.Filled.Settings" Title="Configurations" Expanded="true">
-            <MudNavLink Icon="@Icons.Material.Filled.AdminPanelSettings" Href="/UA">User Management</MudNavLink>
-            <MudNavLink Icon="@Icons.Material.Filled.Cases" Href="/CS">CaseStudies</MudNavLink>
-            <MudNavLink Icon="@Icons.Material.Filled.TableChart" Href="/ET">ExpTables</MudNavLink>
-            <MudNavLink Icon="@Icons.Material.Filled.ViewHeadline" Href="/IN">Intros</MudNavLink>
-        </MudNavGroup>
+        NavManager.NavigateTo("/");
     }
+
 
 
 </MudNavMenu>
 
 
 
-@code { 
+@code {
     public bool IsAdmin;
     protected override async Task OnInitializedAsync()
     {
+        await ApiService.GetCaseStudy();
+        await ApiService.GetExpTables();
+        await ApiService.GetrIntro();
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         IsAdmin = authState.User.IsInRole("ADMIN");
     }

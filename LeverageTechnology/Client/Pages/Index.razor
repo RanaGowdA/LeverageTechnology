@@ -8,7 +8,7 @@
             <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
                 <MudText Typo="Typo.h4" Color="Color.Primary">@introduction</MudText>
             </MudItem>
-            <MudItem Class="mt-1" xs="12" Style="height: fit-content;"> 
+            <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
                 <MudContainer Class="mt-1 row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="container" style="padding:56.25% 0 0 0;position:relative;">
@@ -31,7 +31,8 @@
     public string title = "";
 
     protected async override Task OnInitializedAsync()
-    { 
+    {
+        await ApiService.GetExpTables();
         videosrc = "https://player.vimeo.com/video/" + ApiService.ExpTables[0].Video + '?';
         introduction = ApiService.ExpTables[0].Introduction;
         title = ApiService.ExpTables[0].Page;
