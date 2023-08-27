@@ -12,3 +12,10 @@ LeverageTechnology/.vs/LeverageTechnology/v17/.suo
 *.cache
 *.cache
 *.json
+/LeverageTechnology/LeverageTechnology.sln
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
