@@ -61,17 +61,6 @@
 
     protected async override void OnInitialized()
     {
-        //var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        //var user = authState.User;
-        //if (user.Identity.IsAuthenticated)
-        //{
-        //    IsAuthenticated = true;
-        //}
-        //else
-        //{
-        //    IsAuthenticated = false;
-        //    NavManager.NavigateTo("/");
-        //}
         await ApiService.SyncData();
     }
 

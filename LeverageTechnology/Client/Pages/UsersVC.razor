@@ -1,9 +1,8 @@
-﻿ 
-@using System.Text.Json;
-@using System.Text; 
+﻿@using System.Text.Json;
+@using System.Text;
 @using LeverageTechnology.Client.Pages.StdVC;
 @using LeverageTechnology.Client.Utility;
-@using LeverageTechnology.Shared; 
+@using LeverageTechnology.Shared;
 
 @inject ApiService ApiService
 
@@ -21,10 +20,11 @@
 
             <Columns>
                 <SelectColumn T="AppUser" />
+                <PropertyColumn Property="x => AppUsers.IndexOf(x)+1" Title="Nr" />
                 <PropertyColumn Property="x => x.FirstName" Title="FirstName" />
                 <PropertyColumn Property="x => x.LastName" Title="LastName" />
                 <PropertyColumn Property="x => x.UserName" Title="UserName" />
-                <PropertyColumn Property="x => x.PasswordHash" Title="Password" />  
+                <PropertyColumn Property="x => x.PasswordHash" Title="Password" />
                 <PropertyColumn Property="x => x.IsAdmin" Title="IsAdmin" />
                 <TemplateColumn CellClass="d-flex justify-end">
                     <CellTemplate>
@@ -56,7 +56,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        AppUsers = await ApiService.GetUsers(); 
+        AppUsers = await ApiService.GetUsers();
         AppRoles = await ApiService.GetRoles();
 
     }
@@ -74,11 +74,11 @@
     }
 
     async void StartedEditingItem()
-    { 
+    {
         //var parameters = new DialogParameters();
         //parameters.Add("IsUsers", true);
         //NewUser = new RegisterDto();
-  
+
         //NewUser.FirstName = SelectedAppUser.FirstName;
         //NewUser.LastName = SelectedAppUser.LastName;
         //NewUser.Password = SelectedAppUser.PasswordHash;
@@ -91,7 +91,7 @@
 
         //if (!result.Canceled)
         //{
-            
+
         //}
         //else
         //{
@@ -103,17 +103,17 @@
     {
         var parameters = new DialogParameters();
         parameters.Add("IsUsers", true);
-        parameters.Add("IsInfo", true); 
+        parameters.Add("IsInfo", true);
         NewUser = new RegisterDto();
         NewUser.FirstName = SelectedAppUser.FirstName;
         NewUser.LastName = SelectedAppUser.LastName;
         NewUser.Password = SelectedAppUser.PasswordHash;
-        NewUser.UserName = SelectedAppUser.UserName; 
-        NewUser.IsAdmin = SelectedAppUser.IsAdmin; 
+        NewUser.UserName = SelectedAppUser.UserName;
+        NewUser.IsAdmin = SelectedAppUser.IsAdmin;
         parameters.Add("NewUser", NewUser);
         parameters.Add("Roles", AppRoles);
         var dialog = await Dialog.ShowAsync<AdminDialog>("AppRole", parameters, DialogSettings.DialogOptionsAddEditLead);
-        var result = await dialog.Result; 
+        var result = await dialog.Result;
     }
 
     async void DeleteItem()
@@ -148,7 +148,7 @@
 
     async void CreateNewAppUser()
     {
-        NewUser = new RegisterDto(); 
+        NewUser = new RegisterDto();
         var parameters = new DialogParameters();
         parameters.Add("IsUsers", true);
         parameters.Add("NewUser", NewUser);
@@ -159,12 +159,12 @@
         if (!result.Canceled)
         {
             // create request object
-            var request = await ApiService.Register(NewUser); 
+            var request = await ApiService.Register(NewUser);
             if (request.Succeeded)
             {
                 AppUsers = await ApiService.GetUsers();
                 ShowColorAlerts("AppUser Added", Severity.Success);
-                StateHasChanged(); 
+                StateHasChanged();
             }
             else
             {

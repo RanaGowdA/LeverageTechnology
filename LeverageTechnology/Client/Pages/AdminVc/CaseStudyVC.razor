@@ -10,7 +10,7 @@
 <MudGrid Class="pa-2" Style="object-fit: fill;">
     <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
         <MudDataGrid Class="pt-3 pa-4" FixedHeader="true" T="CaseStudy" Items="@CaseStudies" EditMode="DataGridEditMode.Form"
-                     Bordered="true" Dense="true" SelectedItemsChanged="@SelectedItemsChanged">
+                     Bordered="true" Dense="true" SelectedItemsChanged="@SelectedItemsChanged" MultiSelection="false">
 
             <ToolBarContent>
                 <MudText Typo="Typo.h5" Color="Color.Primary">CaseStudies</MudText>
@@ -21,7 +21,7 @@
 
             <Columns>
                 <SelectColumn T="CaseStudy" />
-                <PropertyColumn Property="x => x.Id" Title="Id" />
+                <PropertyColumn Property="x => CaseStudies.IndexOf(x)+1" Title="Nr" />
                 <PropertyColumn Property="x => x.Page" Title="Page" />
                 <PropertyColumn Property="x => x.Title" Title="Title" />
                 <PropertyColumn Property="x => x.Video" Title="Video" />
@@ -42,6 +42,7 @@
 </MudGrid>
 
 @code {
+    private int rowIndex = 1;
     public List<CaseStudy> CaseStudies { get; set; }
     public List<ExpTable> ExpTables { get; set; }
     public List<Intro> Intros { get; set; }

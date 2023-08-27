@@ -34,14 +34,16 @@
                         </MudCardContent>
                         <MudCardActions Class="d-flex align-content-center justify-content-center flex-wrap flex-grow-1 gap-4">
                             <MudButton Class="text-white" ButtonType="ButtonType.Submit" Variant="Variant.Filled" Style="background-color: #2289db;"
-                                       OnClick="OnLoginSubmit">Login</MudButton>
+                                       OnClick="OnLoginSubmit">
+                                Login
+                            </MudButton>
                             @if (islogin)
                             {
-                                <MudProgressCircular Size="Size.Small" Color="Color.Info" Indeterminate="true" />
+                                <MudProgressCircular Size="Size.Small" Color="Color.Dark" Indeterminate="true" />
                             }
                         </MudCardActions>
-                        @*<hr />*@ 
-                        @*<MudText Class="align-self-center" Align="Align.Center" Typo="Typo.caption">© 2023 - AXISCADES Inc.</MudText> *@ 
+                        @*<hr />*@
+                        @*<MudText Class="align-self-center" Align="Align.Center" Typo="Typo.caption">© 2023 - AXISCADES Inc.</MudText> *@
                     </MudCard>
                 </MudItem>
             </MudGrid>

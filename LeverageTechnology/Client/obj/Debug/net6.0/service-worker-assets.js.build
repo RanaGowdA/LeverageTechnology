@@ -925,11 +925,11 @@
       "url": "_framework\/LeverageTechnology.Shared.pdb"
     },
     {
-      "hash": "sha256-q8ng2E9YLQvaVbR2fqJSCaLkx4yd1VGzZdyrX+8AiVU=",
+      "hash": "sha256-z0sZmpksw+Ddc3RiH1ABum5msWeB15zWl8M9\/t3vswY=",
       "url": "_framework\/LeverageTechnology.Client.dll"
     },
     {
-      "hash": "sha256-zQSw8tMTGN6oy\/axK6Z4idnkTpb892IFml5LXJPCPDo=",
+      "hash": "sha256-6KLk1bLmaAdOjbsZoN392+c9muIPaK\/IaeM92macm9g=",
       "url": "_framework\/LeverageTechnology.Client.pdb"
     },
     {
@@ -937,7 +937,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-tb+tBNCww7dKZl2fMpUlcxM239Ke6jgVh+WyVQrHzs8=",
+      "hash": "sha256-VJhURQdQqwZDSN+twM2hSbNjlK7\/VW7sRHSP2PeRm\/k=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -953,5 +953,5 @@
       "url": "_content\/MudBlazor.ThemeManager\/MudBlazorThemeManager.css"
     }
   ],
-  "version": "heK8oVzu"
+  "version": "DZiOWCnx"
 };

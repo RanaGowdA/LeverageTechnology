@@ -11,7 +11,7 @@
 <MudGrid Class="pa-2" Style="object-fit: fill;">
     <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
         <MudDataGrid Class="pt-3 pa-4" FixedHeader="true" T="Intro" Items="@Intros" EditMode="DataGridEditMode.Form"
-                     Bordered="true" Dense="true" SelectedItemsChanged="@SelectedItemsChanged">
+                     Bordered="true" Dense="true" SelectedItemsChanged="@SelectedItemsChanged" MultiSelection="false">
 
             <ToolBarContent>
                 <MudText Typo="Typo.h5" Color="Color.Primary">Intro</MudText>
@@ -22,7 +22,7 @@
 
             <Columns>
                 <SelectColumn T="Intro" />
-                <PropertyColumn Property="x => x.Id" Title="Id" />
+                <PropertyColumn Property="x => Intros.IndexOf(x)+1" Title="Nr" />
                 <PropertyColumn Property="x => x.Page" Title="Page" />
                 <PropertyColumn Property="x => x.Title" Title="Title" />
                 <PropertyColumn Property="x => x.Introduction" Title="Introduction" />
@@ -30,13 +30,13 @@
                 <TemplateColumn CellClass="d-flex justify-end">
                     <CellTemplate>
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Info" OnClick="InfoItem" />
-                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit"   OnClick="StartedEditingItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="StartedEditingItem" />
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete" OnClick="DeleteItem" />
                     </CellTemplate>
                 </TemplateColumn>
             </Columns>
             <PagerContent>
-                <MudDataGridPager T="CaseStudy" RowsPerPageString="10" />
+                <MudDataGridPager T="Intro" RowsPerPageString="10" />
             </PagerContent>
         </MudDataGrid>
     </MudItem>
@@ -117,7 +117,7 @@
 
     async void DeleteItem()
     {
-         DataIdDTO dataIdDto = new DataIdDTO();
+        DataIdDTO dataIdDto = new DataIdDTO();
         dataIdDto.Id = SelectedIntro.Id;
 
         // create request object
@@ -131,7 +131,7 @@
         else
         {
             ShowColorAlerts("Fail To Delete", Severity.Error);
-        }        
+        }
     }
 
     async void CreateNewAppUser()

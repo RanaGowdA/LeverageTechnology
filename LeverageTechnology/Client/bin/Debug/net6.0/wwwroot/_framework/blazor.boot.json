@@ -208,14 +208,14 @@
       "netstandard.dll": "sha256-8Ej3VOdrj8ijDcTS0\/1AEMpisaFDe3Nmj0Fbq5sfZEk=",
       "System.Private.CoreLib.dll": "sha256-tqFypIfntE2p16olQ2cI4rklqWNJqsPJvAoPSChg0H0=",
       "LeverageTechnology.Shared.dll": "sha256-J+p512ieLHoSGlueb5DyfOyPISsJ9txLb\/YkFAMXNKM=",
-      "LeverageTechnology.Client.dll": "sha256-fsHxC2vMSjGU3xHZKbFAydSF0avKCzSabG0YJCG5LpQ="
+      "LeverageTechnology.Client.dll": "sha256-NKWbWSZbmFLmyxl7FlQRydjSmIyOvA8ahtXwpX4Tp3s="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "LeverageTechnology.Shared.pdb": "sha256-2DNlxPV9S4PObeNR0Y3muneP+3YgsKGYpvTpDNMuuoQ=",
-      "LeverageTechnology.Client.pdb": "sha256-AujBZ+1XaF6nCCA\/6qkYk6kR0MDGNHJnPo0XRJTBnlY="
+      "LeverageTechnology.Client.pdb": "sha256-cM\/JNXZ7+vthmKkOglqzyEShiovBVdi\/F\/OduPvcgIo="
     },
     "runtime": {
       "dotnet.6.0.18.cj7xi80tko.js": "sha256-Iww31ANFa3KZuR4RkhiSYt3FJ7PKpMdeFNq3l3Td1h8=",

@@ -10,7 +10,7 @@
 <MudGrid Class="pa-2" Style="object-fit: fill;">
     <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
         <MudDataGrid Class="pt-3 pa-4" FixedHeader="true" T="ExpTable" Items="@ExpTables" EditMode="DataGridEditMode.Form"
-                     Bordered="true" Dense="true" SelectedItemsChanged="@SelectedItemsChanged">
+                     Bordered="true" Dense="true" SelectedItemsChanged="@SelectedItemsChanged" MultiSelection="false">
 
             <ToolBarContent>
                 <MudText Typo="Typo.h5" Color="Color.Primary">Sub Tables</MudText>
@@ -21,7 +21,7 @@
 
             <Columns>
                 <SelectColumn T="ExpTable" />
-                <PropertyColumn Property="x => x.Id" Title="Id" />
+                <PropertyColumn Property="x => ExpTables.IndexOf(x)+1" Title="Nr" />
                 <PropertyColumn Property="x => x.Page" Title="Page" />
                 <PropertyColumn Property="x => x.Introduction" Title="Introduction" />
                 <PropertyColumn Property="x => x.Video" Title="Video" />
