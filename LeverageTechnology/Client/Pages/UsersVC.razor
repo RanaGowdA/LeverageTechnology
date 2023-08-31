@@ -3,8 +3,10 @@
 @using LeverageTechnology.Client.Pages.StdVC;
 @using LeverageTechnology.Client.Utility;
 @using LeverageTechnology.Shared;
+@using LeverageTechnology.Shared.Models
 
 @inject ApiService ApiService
+
 
 <MudGrid Class="pa-2" Style="object-fit: fill;">
     <MudItem Class="mt-1" xs="12" Style="height: fit-content;">
@@ -29,8 +31,9 @@
                 <TemplateColumn CellClass="d-flex justify-end">
                     <CellTemplate>
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Info" OnClick="InfoItem" />
-                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" Disabled OnClick="StartedEditingItem" />
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit"  OnClick="StartedEditingItem" />
                         <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete" OnClick="DeleteItem" />
+                          <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.LockOpen" OnClick="ResetPassword" />
                     </CellTemplate>
                 </TemplateColumn>
             </Columns>
@@ -41,8 +44,10 @@
     </MudItem>
 </MudGrid>
 
-@code {
 
+
+
+@code {
 
 
     #region Variables
@@ -74,29 +79,32 @@
     }
 
     async void StartedEditingItem()
-    {
-        //var parameters = new DialogParameters();
-        //parameters.Add("IsUsers", true);
-        //NewUser = new RegisterDto();
+    {        
+        var parameters = new DialogParameters();
+        parameters.Add("IsUsers", true);
+        parameters.Add("IsInfo", true); 
+        NewUser = new RegisterDto();
+        NewUser.FirstName = SelectedAppUser.FirstName;
+        NewUser.LastName = SelectedAppUser.LastName;
+        NewUser.Password = SelectedAppUser.PasswordHash;
+        NewUser.UserName = SelectedAppUser.UserName; 
+        NewUser.IsAdmin = SelectedAppUser.IsAdmin; 
+        parameters.Add("NewUser", NewUser);
+        parameters.Add("Roles", AppRoles);
 
-        //NewUser.FirstName = SelectedAppUser.FirstName;
-        //NewUser.LastName = SelectedAppUser.LastName;
-        //NewUser.Password = SelectedAppUser.PasswordHash;
-        //NewUser.UserName = SelectedAppUser.UserName;
-        //NewUser.IsAdmin = SelectedAppUser.IsAdmin;
-        //parameters.Add("NewUser", SelectedAppUser);
-        //parameters.Add("Roles", AppRoles);
-        //var dialog = await Dialog.ShowAsync<AdminDialog>("Edit User", parameters, DialogSettings.DialogOptionsAddEditLead);
-        //var result = await dialog.Result;
+        var dialog = await Dialog.ShowAsync<EditComponent>("Edit Role", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result; 
 
-        //if (!result.Canceled)
-        //{
+        if (result != null && result.Data is RegisterDto updatedUser)
+        {
+            
+            SelectedAppUser.FirstName = updatedUser.FirstName;
+            SelectedAppUser.LastName = updatedUser.LastName;
+            SelectedAppUser.IsAdmin = updatedUser.IsAdmin;
+           
+            StateHasChanged();
+        }
 
-        //}
-        //else
-        //{
-        //    ShowColorAlerts("AppUser Not Added", Severity.Info);
-        //}
     }
 
     async void InfoItem()
@@ -116,35 +124,84 @@
         var result = await dialog.Result;
     }
 
+
+
     async void DeleteItem()
     {
+        if (SelectedAppUser != null)
+        {
+            try
+            {
+                var dto = new RegisterDto();
+                dto.FirstName = SelectedAppUser.FirstName;
+                dto.LastName = SelectedAppUser.LastName;
+                dto.Password = SelectedAppUser.PasswordHash;
+                dto.UserName = SelectedAppUser.UserName;
+                dto.IsAdmin = SelectedAppUser.IsAdmin;
 
-        //DataIdDTO dataIdDTO = new();
-        //dataIdDTO.Id = SelectedAppUser.Id;
+                bool deleteSuccess = await ApiService.DeleteUser(dto);
 
-        //// create request object
-        //var request = new HttpRequestMessage(HttpMethod.Post, "api/UserAdmin/DU");
+                if (deleteSuccess)
+                {
+                    AppUsers.Remove(SelectedAppUser);
+                    ShowColorAlerts("User deleted successfully.", Severity.Success);
+                    StateHasChanged();
 
-        //// set request body
-        //request.Content = new StringContent(JsonSerializer.Serialize(dataIdDTO), Encoding.UTF8, "application/json");
+                }
+                else
+                {
+                    ShowColorAlerts("Failed to delete user.", Severity.Error);
 
-        ////// add authorization header
-        ////request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
+                }
 
-        //// send request
-        //var response = await httpClient.SendAsync(request);
-
-        //if (response.IsSuccessStatusCode)
-        //{
-        //    AppUsers = (await CS.SyncAppUsersTable()).ToList();
-        //    ShowColorAlerts("AppRole Deleted", Severity.Success);
-        //    StateHasChanged();
-        //}
-        //else
-        //{
-        //    ShowColorAlerts("Fail To Delete", Severity.Error);
-        //}
+            }
+            catch (Exception ex)
+            {
+                ShowColorAlerts($"An error occurred: {ex.Message}", Severity.Error);
+            }
+        }
+        else
+        {
+            ShowColorAlerts("No user selected for deletion.", Severity.Warning);
+        }
     }
+
+
+
+
+    async void ResetPassword()
+    {
+        if (SelectedAppUser != null)
+        {
+            
+                var resetPasswordDto = new RegisterDto();
+                resetPasswordDto.FirstName = SelectedAppUser.FirstName;
+                resetPasswordDto.LastName = SelectedAppUser.LastName;
+                resetPasswordDto.Password = SelectedAppUser.PasswordHash;
+                resetPasswordDto.UserName = SelectedAppUser.UserName;
+                resetPasswordDto.IsAdmin = SelectedAppUser.IsAdmin;
+
+
+                bool resetSuccess = await ApiService.ResetPassword(resetPasswordDto);
+
+                if (resetSuccess)
+                {
+
+                    ShowColorAlerts("Password reset successful.", Severity.Success);
+                }
+                else
+                {
+                    ShowColorAlerts("Failed to reset password.", Severity.Error);
+                }
+            
+          
+        }
+        else
+        {
+            ShowColorAlerts("No user selected for password reset.", Severity.Warning);
+        }
+    }
+
 
     async void CreateNewAppUser()
     {

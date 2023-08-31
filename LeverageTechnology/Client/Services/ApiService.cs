@@ -1,5 +1,6 @@
 ﻿
 using LeverageTechnology.Shared;
+using LeverageTechnology.Shared.Models;
 using LeverageTechnology.Shared.Models.DTOs;
 
 namespace LeverageTechnology.Client
@@ -203,6 +204,40 @@ namespace LeverageTechnology.Client
                 throw new ApplicationException(await httpResponse.GetBody());
             return httpResponse.Response;
         }
+
+        
+        public async Task<bool> DeleteUser(RegisterDto registerDTO)
+        {           
+
+            var httpResponse = await _httpService.Post<RegisterDto, bool>(
+                "/api/Identity/deleteuser", registerDTO);  
+
+            if (!httpResponse.Success)
+            {
+               throw new ApplicationException(await httpResponse.GetBody());
+            }
+
+            return httpResponse.Response;
+        }
+
+        
+        public async Task<bool> ResetPassword(RegisterDto Rdto)
+        {
+            var httpResponse = await _httpService.Post<RegisterDto, bool>(
+                "/api/identity/resetpassword", Rdto);
+
+            if (!httpResponse.Success)
+            {
+                throw new ApplicationException(await httpResponse.GetBody());
+            }
+
+            return httpResponse.Response;
+        }
+
+
+
+
+
 
 
     }

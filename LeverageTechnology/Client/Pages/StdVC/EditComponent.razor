@@ -1,0 +1,150 @@
+﻿@using System.Text.RegularExpressions;
+@using System.ComponentModel.DataAnnotations;
+@using LeverageTechnology.Shared;
+
+
+<MudDialog>
+    <DialogContent>
+        @if (IsRoles)
+        {
+            <MudGrid>
+                <MudItem xs="12">
+                    <MudTextField Required @bind-Value="@NewRole.Name" Label="Account" HelperText="Enter Account Ex.SuperMan" Variant="Variant.Text"
+                                  Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.VerifiedUser"
+                                  AdornmentColor="Color.Primary" Immediate="true" Disabled="@IsInfo" />
+                </MudItem>
+            </MudGrid>
+        }
+
+
+        @if (IsUsers)
+        {
+            <MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+                <MudTextField T="string" @bind-Value="@NewUser.FirstName" Label="FirstName" Required="true" RequiredError="Full name is required!" />
+                <MudTextField T="string" @bind-Value="@NewUser.LastName" Label="LastName" Required="true" RequiredError="User name is required!" />
+               
+                             
+                <MudCheckBox @bind-Checked="@NewUser.IsAdmin" Color="Color.Secondary" LabelPosition="LabelPosition.End"> Is Admin @NewUser.IsAdmin</MudCheckBox>
+
+            </MudForm>
+        }
+
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        @if (IsInfo || IsRoles)
+        {
+            <MudButton Color="Color.Primary" OnClick="Submit" Enabled="@IsInfo">Ok</MudButton>
+        }
+        else
+        {
+            <MudButton Color="Color.Primary" OnClick="Submit" Disabled="@(!success)">Register</MudButton>
+        }
+    </DialogActions>
+</MudDialog>
+@code {
+
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+
+    #region Variables
+
+    private string value { get; set; } = "Nothing selected";
+    private IEnumerable<string> options { get; set; }
+
+    public int CounterLimit { get; set; }
+
+    [Parameter]
+    public bool IsInfo { get; set; }
+
+    [Parameter]
+    public bool IsRoles { get; set; }
+
+    [Parameter]
+    public AppRole NewRole { get; set; }
+
+    [Parameter]
+    public List<AppRole> Roles { get; set; }
+
+
+    [Parameter]
+    public bool IsUsers { get; set; }
+
+    [Parameter]
+    public RegisterDto NewUser { get; set; }
+
+    bool success;
+    string[] errors = { };
+    MudTextField<string> pwField1;
+    MudForm form;
+
+    #endregion Variables
+
+    #region Events
+    //protected override async Task OnInitializedAsync()
+    //{
+    //}
+
+    //private IEnumerable<string> PasswordStrength(string pw)
+    //{
+    //    if (string.IsNullOrWhiteSpace(pw))
+    //    {
+    //        yield return "Password is required!";
+    //        yield break;
+    //    }
+    //    if (pw.Length < 8)
+    //        yield return "Password must be at least of length 8";
+    //    if (!Regex.IsMatch(pw, @"[A-Z]"))
+    //        yield return "Password must contain at least one capital letter";
+    //    if (!Regex.IsMatch(pw, @"[a-z]"))
+    //        yield return "Password must contain at least one lowercase letter";
+    //    if (!Regex.IsMatch(pw, @"[0-9]"))
+    //        yield return "Password must contain at least one digit";
+    //}
+
+    //private string PasswordMatch(string arg)
+    //{
+    //    if (pwField1.Value != arg)
+    //        return "Passwords don't match";
+    //    return null;
+    //}
+
+    /// <summary>
+    /// Restrict User Not Enter More Than @CounterLimit Characters
+    /// </summary>
+    /// <param name="character"></param>
+    /// <returns></returns>
+    private IEnumerable<string> MaxCharacters(string character)
+    {
+        if (!string.IsNullOrEmpty(character) && @CounterLimit < character?.Length)
+        {
+            yield return "Max @CounterLimit Characters";
+        }
+    }
+
+    ///// <summary>
+    /// When User Hits Ok/Add
+    /// </summary>
+    void Submit()
+    {
+       
+       MudDialog.Close(DialogResult.Ok(NewUser));
+
+    }
+
+
+    ///// <summary>
+    /// When User Hits Cancel/Close
+    /// </summary>
+    void Cancel()
+    {
+        MudDialog.Cancel();
+    }
+
+    #endregion Events
+
+
+
+
+
+}

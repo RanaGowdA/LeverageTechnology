@@ -105,6 +105,14 @@
         //{
         //    ShowColorAlerts("AppRole Not Added", Severity.Info);
         //}
+
+
+         var parameters = new DialogParameters();
+        parameters.Add("IsRoles", true);
+        parameters.Add("IsInfo", true);
+        parameters.Add("NewRole", SelectedAppRole);
+        var dialog = await Dialog.ShowAsync<EditComponent>("Edit Role", parameters, DialogSettings.DialogOptionsAddEditLead);
+        var result = await dialog.Result;
     }
 
     async void InfoItem()

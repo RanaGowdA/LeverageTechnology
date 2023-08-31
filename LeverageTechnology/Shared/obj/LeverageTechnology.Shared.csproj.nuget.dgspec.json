@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Shared\\LeverageTechnology.Shared.csproj": {}
+    "C:\\Users\\Chethan\\Desktop\\LeverageTechnology\\LeverageTechnology\\Shared\\LeverageTechnology.Shared.csproj": {}
   },
   "projects": {
-    "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Shared\\LeverageTechnology.Shared.csproj": {
+    "C:\\Users\\Chethan\\Desktop\\LeverageTechnology\\LeverageTechnology\\Shared\\LeverageTechnology.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Shared\\LeverageTechnology.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Chethan\\Desktop\\LeverageTechnology\\LeverageTechnology\\Shared\\LeverageTechnology.Shared.csproj",
         "projectName": "LeverageTechnology.Shared",
-        "projectPath": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Shared\\LeverageTechnology.Shared.csproj",
-        "packagesPath": "C:\\Users\\Rana.Gowd\\.nuget\\packages\\",
-        "outputPath": "R:\\Web Development\\RanaAdigowni\\ProjectX\\LeverageTechnology\\LeverageTechnology\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\Chethan\\Desktop\\LeverageTechnology\\LeverageTechnology\\Shared\\LeverageTechnology.Shared.csproj",
+        "packagesPath": "C:\\Users\\Chethan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Chethan\\Desktop\\LeverageTechnology\\LeverageTechnology\\Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Rana.Gowd\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Chethan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,8 +51,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -66,12 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

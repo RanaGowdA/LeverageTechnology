@@ -212,22 +212,22 @@ namespace LeverageTechnology.Server.Controllers
             };
         }
 
-        [HttpDelete("deleteuser")]
-        public async Task<IActionResult> DeleteUser(RegisterDto dto)
+        [HttpPost("deleteuser")]
+        public async Task<bool> DeleteUser(RegisterDto dto)
         {
             var userToDelete = await _userManager.FindByNameAsync(dto.UserName);
             if (userToDelete == null)
             {
-                return NotFound($"User with username '{dto.UserName}' not found.");
+                return false;
             }
 
             var result = await _userManager.DeleteAsync(userToDelete);
             if (result.Succeeded)
             {
-                return Ok($"User '{dto.UserName}' has been deleted.");
+                return true;
             }
 
-            return BadRequest(result.Errors);
+            return false;
         }
 
         [AllowAnonymous]
@@ -281,6 +281,32 @@ namespace LeverageTechnology.Server.Controllers
         {
             return await _context.GetAllRoles();
         }
+
+
+        [HttpPost("resetpassword")]
+        public async Task<bool> ResetPassword(RegisterDto dto)
+        {
+            var userToReset = await _userManager.FindByNameAsync(dto.UserName);
+            if (userToReset == null)
+            {
+                return false;
+            }
+
+            // Generate a new password for reset
+            var newPassword = "Password@123"; 
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(userToReset);
+            var result = await _userManager.ResetPasswordAsync(userToReset, token, newPassword);
+
+            if (result.Succeeded)
+                return true;
+
+            return false;
+            
+        }
+
+
+
     }
 }
 
